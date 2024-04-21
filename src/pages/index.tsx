@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Movie } from '@/types/types'
+import Image from 'next/image';
 
-function index() {
+function Index() {
 
   const [loading, setLoading] = useState(false)
   const [movieData, setMOvieData] = useState<Movie[]>([])
@@ -39,9 +40,12 @@ function index() {
         className="p-6"
         key={movie.id}>
         <div
-          className='grid grid-areas-card bg-zinc-800 p-8 gap-y-4 text-center'>
-          <img className="grid-in-image"
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}></img>
+          className='grid grid-areas-card bg-zinc-800 p-6 gap-y-4 text-center'>
+          <Image className="grid-in-image"
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            alt="Movie"
+            width={500}
+            height={500} />
           <h1 className='grid-in-title text-3xl'>{movie.title}</h1>
           <p className='grid-in-overview text-left text-sm'>{movie.overview}</p>
         </div>
@@ -56,4 +60,4 @@ function index() {
   )
 }
 
-export default index
+export default Index
