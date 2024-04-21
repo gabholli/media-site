@@ -12,11 +12,17 @@ const config: Config = {
         "card": [
           "image",
           "title",
-          "overview"
+          "overview",
+          "popularity",
+          "date",
+          "votes",
+          "button"
         ],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@savvywombat/tailwindcss-grid-areas')
+  ],
 };
 export default config;
