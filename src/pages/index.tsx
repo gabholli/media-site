@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 function index() {
 
   useEffect(() => {
-    axios.get('/api/hello')
+    axios.get(`/api/movie?query=${encodeURIComponent("basketball")}`)
       .then(response => {
         console.log(response)
       })
