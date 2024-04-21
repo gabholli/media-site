@@ -36,26 +36,23 @@ export default function Movies() {
 
   const movieList = movieData?.map(movie => {
     return (
-      <section
-        className="p-6"
-        key={movie.id}>
-        <div
-          className='grid grid-areas-card bg-zinc-800 p-6 gap-y-4 text-center h-auto w-auto'>
-          <Image className="grid-in-image"
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            alt="Movie"
-            width={500}
-            height={500} />
-          <h1 className='grid-in-title text-3xl'>{movie.title}</h1>
-          <p className='grid-in-overview text-left text-sm'>{movie.overview}</p>
-        </div>
-      </section>
+
+      <div key={movie.id}
+        className='flex flex-col bg-zinc-800 p-6 gap-y-8 text-center m-6'>
+        <img className="h-96 w-full object-cover"
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          alt="Movie"
+        ></img>
+        <h1 className='text-3xl'>{movie.title}</h1>
+        <p className='text-left text-sm'>{movie.overview}</p>
+      </div>
+
     )
   })
 
   return (
-    <div>
+    <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
       {movieList}
-    </div>
+    </main>
   )
 }
