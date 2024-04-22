@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Movie } from '@/types/types'
-import Image from 'next/image';
+import Link from 'next/link'
 import BackToHome from '@/components/BackToHome';
 
 export default function Movies() {
@@ -52,7 +52,12 @@ export default function Movies() {
           <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{movie.vote_average}</span></p>
           <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{movie.vote_count}</span></p>
         </div>
-        <button className='bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
+        <div className='flex gap-x-4'>
+          <Link
+            href="#"
+            className='bg-zinc-500 px-4 py-2 rounded font-black'>Details</Link>
+          <button className='bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
+        </div>
       </div >
 
     )
