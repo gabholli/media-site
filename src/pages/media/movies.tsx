@@ -54,7 +54,7 @@ export default function Movies() {
         </div>
         <div className='flex gap-x-4'>
           <Link
-            href="#"
+            href="/"
             className='bg-zinc-500 px-4 py-2 rounded font-black'>Details</Link>
           <button className='bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
         </div>
