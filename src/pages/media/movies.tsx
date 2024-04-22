@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Movie } from '@/types/types'
 import Image from 'next/image';
+import BackToHome from '@/components/BackToHome';
 
 export default function Movies() {
 
@@ -43,23 +44,26 @@ export default function Movies() {
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt="Movie"
         ></img>
-        <h1 className='text-3xl'>{movie.title}</h1>
+        <h1 className='text-3xl font-bold'>{movie.title}</h1>
         {/* <p className='text-left text-sm'>{movie.overview}</p> */}
-        <p>Popularity score: {movie.popularity}</p>
-        <p>Release date: {movie.release_date}</p>
+        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{movie.popularity}</span></p>
+        <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{movie.release_date}</span></p>
         <div className='flex gap-x-4'>
-          <p>Average votes: {movie.vote_average}</p>
-          <p>Vote count: {movie.vote_count}</p>
+          <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{movie.vote_average}</span></p>
+          <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{movie.vote_count}</span></p>
         </div>
-        <button className='bg-zinc-500 px-4 py-2 rounded'>Add to watchlist</button>
-      </div>
+        <button className='bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
+      </div >
 
     )
   })
 
   return (
-    <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
-      {movieList}
-    </main>
+    <>
+      <BackToHome />
+      <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
+        {movieList}
+      </main>
+    </>
   )
 }
