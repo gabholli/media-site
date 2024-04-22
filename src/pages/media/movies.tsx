@@ -38,20 +38,23 @@ export default function Movies() {
     return (
 
       <div key={movie.id}
-        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6 rounded'>
-        <img className="h-96 w-full object-cover rounded"
+        className='flex flex-col justify-between items-
+          lg:grid lg:grid-areas-card lg:grid-cols-1
+          lg:grid-rows-[1fr_125px_300px_auto_auto_auto_auto]
+           bg-zinc-800 p-6 gap-y-8 text-center m-6'>
+        <img className="w-full object-cover grid-in-image"
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt="Movie"
         ></img>
-        <h1 className='text-3xl lg:h-24'>{movie.title}</h1>
-        <p className='text-left text-sm lg:h-80'>{movie.overview}</p>
-        <p>Popularity score: {movie.popularity}</p>
+        <h1 className='text-3xl lg:grid-in-title'>{movie.title}</h1>
+        <p className=' text-sm lg:grid-in-overview place-self-center'>{movie.overview}</p>
+        <p className='lg:grid-in-popularity'>Popularity score: {movie.popularity}</p>
         <p>Release date: {movie.release_date}</p>
-        <div className='flex gap-x-4'>
+        <div className='flex gap-x-4 lg:grid-in-votes place-self-center'>
           <p>Average votes: {movie.vote_average}</p>
           <p>Vote count: {movie.vote_count}</p>
         </div>
-        <button className='bg-zinc-500 px-4 py-2 rounded'>Add to watchlist</button>
+        <button className='bg-zinc-500 px-4 py-2 rounded lg:grid-in-button'>Add to watchlist</button>
       </div>
 
     )
