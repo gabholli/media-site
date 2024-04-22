@@ -40,9 +40,9 @@ export default function Movies() {
       <div key={movie.id}
         className='flex flex-col justify-between items-
           lg:grid lg:grid-areas-card lg:grid-cols-1
-          lg:grid-rows-[1fr_125px_300px_auto_auto_auto_auto]
+          lg:grid-rows-[auto_125px_300px_auto_auto_auto_auto]
            bg-zinc-800 p-6 gap-y-8 text-center m-6'>
-        <img className="w-full object-cover grid-in-image"
+        <img className="h-96 w-full object-cover grid-in-image"
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt="Movie"
         ></img>
