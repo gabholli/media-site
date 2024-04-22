@@ -38,13 +38,13 @@ export default function Movies() {
     return (
 
       <div key={movie.id}
-        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6'>
-        <img className="h-96 w-full object-cover"
+        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6 rounded'>
+        <img className="h-96 w-full object-cover rounded"
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt="Movie"
         ></img>
-        <h1 className='text-3xl'>{movie.title}</h1>
-        <p className='text-left text-sm'>{movie.overview}</p>
+        <h1 className='text-3xl lg:h-24'>{movie.title}</h1>
+        <p className='text-left text-sm lg:h-80'>{movie.overview}</p>
         <p>Popularity score: {movie.popularity}</p>
         <p>Release date: {movie.release_date}</p>
         <div className='flex gap-x-4'>
