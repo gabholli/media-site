@@ -13,7 +13,7 @@ const config: Config = {
           "image",
           "title",
           "overview",
-          "popularity",
+          // "popularity",
           "date",
           "votes",
           "button"
