@@ -11,7 +11,7 @@ export default function Movies() {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`/api/movie?query=${encodeURIComponent("basketball")}`)
+    axios.get(`/api/movies/movie?query=${encodeURIComponent("basketball")}`)
       .then(response => {
         console.log(response.data.results)
         setMOvieData(response.data.results)
@@ -54,7 +54,7 @@ export default function Movies() {
         </div>
         <div className='flex gap-x-4'>
           <Link
-            href="/"
+            href={`./MovieDetails?id=${movie.id}`}
             className='bg-zinc-500 px-4 py-2 rounded font-black'>Details</Link>
           <button className='bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
         </div>
