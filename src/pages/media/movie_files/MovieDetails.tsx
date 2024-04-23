@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import BackToHome from '@/components/BackToHome'
+import BackToHome from '@/components/TopLinks'
 export default function MovieDetails() {
 
   const router = useRouter()

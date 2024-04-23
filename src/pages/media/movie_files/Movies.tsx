@@ -2,7 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Movie } from '@/types/types'
 import Link from 'next/link'
-import BackToHome from '@/components/BackToHome';
+import BackToHome from '@/components/TopLinks';
+import TopLinks from '@/components/TopLinks';
 
 export default function Movies() {
 
@@ -65,7 +66,7 @@ export default function Movies() {
 
   return (
     <>
-      <BackToHome />
+      <TopLinks />
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}
       </main>

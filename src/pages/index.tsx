@@ -4,10 +4,14 @@ import Link from 'next/link'
 
 export default function Index() {
   return (
-    <div>
-      <h1 className='text-5xl'>Select type of list wanted:</h1>
+    <div className='flex flex-col items-center justify-center min-h-svh'>
+      <h1 className='text-5xl'>Select media type:</h1>
       <nav>
-        <Link href="/media/movie_files/Movies">Movies</Link>
+        <ul className='list-disc'>
+          <li>
+            <Link href="/media/movie_files/Movies">Movies</Link>
+          </li>
+        </ul>
       </nav>
     </div>
   )
