@@ -9,7 +9,7 @@ export default function Index() {
       <nav>
         <ul className='list-disc'>
           <li>
-            <Link href="/media/movieFiles/Movies">Movies</Link>
+            <Link href="/media/movie_files/Movies">Movies</Link>
           </li>
         </ul>
       </nav>
