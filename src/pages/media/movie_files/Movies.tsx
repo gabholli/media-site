@@ -8,14 +8,14 @@ import TopLinks from '@/components/TopLinks';
 export default function Movies() {
 
   const [loading, setLoading] = useState(false)
-  const [movieData, setMOvieData] = useState<Movie[]>([])
+  const [movieData, setMovieData] = useState<Movie[]>([])
 
   useEffect(() => {
     setLoading(true)
     axios.get(`/api/movies/movie?query=${encodeURIComponent("basketball")}`)
       .then(response => {
         console.log(response.data.results)
-        setMOvieData(response.data.results)
+        setMovieData(response.data.results)
       })
       .catch(error => {
         console.error("There was an error", error)
@@ -55,7 +55,7 @@ export default function Movies() {
         </div>
         <div className='flex gap-x-4'>
           <Link
-            href={`./MovieDetails?id=${movie.id}`}
+            href={`./movie/${movie.id}`}
             className='flex justify-center items-center bg-zinc-500 px-4 py-2 rounded font-black'>Details</Link>
           <button className='flex justify-center items-center 
             bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>

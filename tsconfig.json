@@ -26,9 +26,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/media",
-    "src/pages/media"
-  ],
+    "src/pages/media.tsx",
+    "src/pages/media.tsx"
+, "src/pages/media"  ],
   "exclude": [
     "node_modules"
   ]
