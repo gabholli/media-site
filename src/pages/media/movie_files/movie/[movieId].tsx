@@ -8,6 +8,7 @@ export default function MovieDetails() {
   const router = useRouter()
   const { query } = router
   const [loading, setLoading] = useState(false)
+  const [moviesData, setMoviesData] = useState<any>([])
   console.log(router)
   useEffect(() => {
     setLoading(true)
@@ -15,6 +16,7 @@ export default function MovieDetails() {
       axios.get(`/api/movies/movieId/${query.movieId}`)
         .then(response => {
           console.log(response.data)
+          setMoviesData(response.data)
         })
         .catch(error => {
           console.error("There was an error", error)
@@ -36,11 +38,20 @@ export default function MovieDetails() {
     )
   }
 
+
   return (
     <>
       <TopLinks />
-      <div>
+      <div className='p-6 flex flex-col gap-y-8'>
         Movie details here for ID: {query.movieId}
+        <img className="h-96 w-full object-cover"
+          src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
+          alt="Movie">
+        </img>
+        <h1
+          className='text-center'>
+          {moviesData.original_title}
+        </h1>
       </div>
     </>
   )
