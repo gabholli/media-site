@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import TopLinks from '@/components/TopLinks'
+import SearchForm from '@/components/SearchForm'
+import BackToTopButton from '@/components/BackToTopButton'
+import ToWatchlistButton from '@/components/ToWatchlistButton'
 
 export default function MovieDetails() {
 
@@ -42,17 +45,26 @@ export default function MovieDetails() {
   return (
     <>
       <TopLinks />
-      <div className='p-6 flex flex-col gap-y-8'>
+      <main className='p-6 flex flex-col gap-y-8 items-center'>
+        <SearchForm />
         Movie details here for ID: {query.movieId}
-        <img className="h-96 w-full object-cover"
+        <img className="h-96 w-full lg:w-1/2 object-scale-down"
           src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
           alt="Movie">
         </img>
         <h1
-          className='text-center'>
-          {moviesData.original_title}
+          className='text-center text-3xl'>
+          {moviesData.title}
         </h1>
-      </div>
+        <p className='text-2xl'>Popularity score: {moviesData.popularity}</p>
+        <p className='text-2xl'>Release date: {moviesData.release_date}</p>
+        {moviesData.origin_country && <p className='text-2xl'>
+          Country of origin: {moviesData.origin_country[0]}
+        </p>}
+        <p className='text-lg'>{moviesData.overview}</p>
+        <ToWatchlistButton />
+      </main>
+      <BackToTopButton />
     </>
   )
 }

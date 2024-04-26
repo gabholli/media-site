@@ -4,6 +4,7 @@ import { Movie } from '@/types/types'
 import Link from 'next/link'
 import BackToHome from '@/components/TopLinks';
 import TopLinks from '@/components/TopLinks';
+import ToWatchlistButton from '@/components/ToWatchlistButton';
 
 export default function Movies() {
 
@@ -56,9 +57,10 @@ export default function Movies() {
         <div className='flex gap-x-4'>
           <Link
             href={`./movie/${movie.id}`}
-            className='flex justify-center items-center bg-zinc-500 px-4 py-2 rounded font-black'>Details</Link>
-          <button className='flex justify-center items-center 
-            bg-zinc-500 px-4 py-2 rounded font-black'>Add to watchlist</button>
+            className='flex justify-center items-center bg-zinc-500 px-4 py-2 rounded font-black'>
+            Details
+          </Link>
+          <ToWatchlistButton />
         </div>
       </div >
 
