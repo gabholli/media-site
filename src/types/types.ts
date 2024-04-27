@@ -31,8 +31,11 @@ export interface ContextProps {
     movieFromLocalStorage: any
 }
 
+export interface MovieItem {
+    num: number
+    movie: string
+}
 
-// export interface WatchlistButtonComponentProps {
-//     handleClick: any
-//     movieInfo: any
-// }
+export interface WatchlistButtonComponentProps {
+    handleClick: any
+}

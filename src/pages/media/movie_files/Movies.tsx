@@ -9,25 +9,6 @@ const Movies = () => {
 
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
-  const [watchlistValues, setWatchlistValues] = useState([])
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedItems = localStorage.getItem('watchlist');
-      if (storedItems) {
-        setWatchlistValues(JSON.parse(storedItems));
-      }
-    }
-  }, []);
-
-  // Example function to add items to the array
-  const addItem = (item: any) => {
-    const newItems: any = [...watchlistValues, item];
-    setWatchlistValues(newItems);
-    if (typeof window !== "undefined") {
-      localStorage.setItem('watchlist', JSON.stringify(newItems));
-    }
-  }
 
   useEffect(() => {
     setLoading(true)

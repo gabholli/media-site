@@ -71,12 +71,14 @@ const MovieDetails = () => {
 
   return (
     <>
-      <TopLinks />
-      <SearchForm
-        submit={handleSubmit}
-        name="movie"
-        value={getMovieFromLocalStorage || ""}
-        change={handleChange} />
+      <div className='flex justify-center items-center mt-6 gap-x-12'>
+        <TopLinks />
+        <SearchForm
+          submit={handleSubmit}
+          name="movie"
+          value={getMovieFromLocalStorage || ""}
+          change={handleChange} />
+      </div>
       <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
         <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
           src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
