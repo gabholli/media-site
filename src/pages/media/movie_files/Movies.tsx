@@ -57,7 +57,9 @@ export default function Movies() {
         <div className='flex gap-x-4'>
           <Link
             href={`./movie/${movie.id}`}
-            className='flex justify-center items-center bg-zinc-500 px-4 py-2 rounded font-black'>
+            className='flex justify-center items-center
+            bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+              px-4 py-2 rounded font-black'>
             Details
           </Link>
           <ToWatchlistButton />
