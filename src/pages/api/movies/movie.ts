@@ -2,11 +2,6 @@
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  name: string;
-};
-
-
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req.query
   axios.get("https://api.themoviedb.org/3/search/movie", {

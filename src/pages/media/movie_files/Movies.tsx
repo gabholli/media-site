@@ -4,6 +4,7 @@ import { Movie } from '@/types/types'
 import Link from 'next/link'
 import TopLinks from '@/components/TopLinks';
 import ToWatchlistButton from '@/components/ToWatchlistButton';
+import SearchForm from '@/components/SearchForm';
 
 const Movies = () => {
 
@@ -70,7 +71,10 @@ const Movies = () => {
 
   return (
     <>
-      <TopLinks />
+      <div className='flex justify-center items-center mt-6 gap-x-8'>
+        <TopLinks />
+        <SearchForm />
+      </div>
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}
       </main>
