@@ -98,7 +98,9 @@ const Movies = () => {
 
   return (
     <>
-      <div className='flex flex-col md:flex-row justify-center items-center mt-6 gap-y-8 gap-x-8'>
+      <div className='flex flex-col lg:flex-row lg:justify-between justify-center 
+        items-center mt-9 lg:mx-12 gap-y-8 gap-x-8'>
+        <h1 className='text-6xl'>MediaVille</h1>
         <TopLinks />
         <SearchForm
           submit={handleSubmit}

@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 const TopLinks = () => {
     return (
-        <nav className='flex flex-col md:flex-row justify-center items-center gap-y-6 gap-x-12'>
+        <nav className='lg:ml-auto flex flex-col md:flex-row justify-center 
+            items-center gap-y-6 gap-x-8'>
             <Link
                 className='underline text-xl'
                 href="/">
