@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Movie, MovieItem } from '@/types/types'
 import Link from 'next/link'
 import TopLinks from '@/components/TopLinks';
@@ -21,15 +21,14 @@ const Movies = () => {
 
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
-  const [search, setSearch] = useState<{ movie: MovieItem | null }>(() => {
-    const movieItem = typeof window !== "undefined" ? localStorage.getItem("movie") : null
-    return { movie: movieItem ? JSON.parse(movieItem) : null }
-  })
+  const [search, setSearch] = useState("")
+
+  const inputRef = useRef("")
 
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`/api/movies/movie?query=${encodeURIComponent(search.movie)}`)
+    axios.get(`/api/movies/movie?query=${encodeURIComponent(search)}`)
       .then(response => {
         console.log(response.data.results)
         setMovieData(response.data.results)
@@ -40,21 +39,12 @@ const Movies = () => {
       .finally(() => {
         setLoading(false)
       })
-  }, [search.movie])
+  }, [search])
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const newMovie = event.currentTarget.movie.value
-    setSearch({ movie: newMovie })
-    localStorage.setItem("movie", JSON.stringify(newMovie))
-  }
-
-
-  const handleChange = (event: any) => {
-    setSearch(prevState => ({
-      ...prevState,
-      movie: event.target.value
-    }))
+    const name = inputRef.current.value
+    setSearch(name)
   }
 
   if (loading) {
@@ -106,9 +96,8 @@ const Movies = () => {
         <TopLinks />
         <SearchForm
           submit={handleSubmit}
-          name="movie"
-          value={search.movie}
-          change={handleChange} />
+          movieRef={inputRef}
+        />
       </div>
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}

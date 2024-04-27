@@ -22,8 +22,10 @@ export interface MovieLocalStorage {
 export interface FormComponentProps {
     submit: (event: React.FormEvent<HTMLFormElement>) => void;
     // change: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    name: string
+    // name: string
     // value: any
+    ref: any
+    defaultValue: any
 }
 
 export interface ContextProps {
