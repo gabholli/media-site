@@ -40,3 +40,7 @@ export interface MovieItem {
 // export interface WatchlistButtonComponentProps {
 //     handleClick: any
 // }
+
+export interface MovieList {
+    getFromLocalStorage(key: string): any | null
+}

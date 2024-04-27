@@ -5,6 +5,7 @@ import Link from 'next/link'
 import TopLinks from '@/components/TopLinks';
 import ToWatchlistButton from '@/components/ToWatchlistButton';
 import SearchForm from '@/components/SearchForm';
+import { saveToLocalStorage } from '@/utils/lcoalStorageFunctions';
 
 const Movies = () => {
 
@@ -46,6 +47,7 @@ const Movies = () => {
     if (inputRef.current !== null) {
       const name: string = inputRef.current.value
       console.log(name)
+      saveToLocalStorage("movie", name)
       setSearch(name)
     } else {
       console.log("The input ref is null.")
