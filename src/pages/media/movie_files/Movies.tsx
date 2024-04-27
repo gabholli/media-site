@@ -92,7 +92,7 @@ const Movies = () => {
 
   return (
     <>
-      <div className='flex justify-center items-center mt-6 gap-x-8'>
+      <div className='flex flex-col md:flex-row justify-center items-center mt-6 gap-y-8 gap-x-8'>
         <TopLinks />
         <SearchForm
           submit={handleSubmit}
