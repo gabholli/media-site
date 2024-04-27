@@ -1,3 +1,4 @@
+import Watchlist from '@/pages/watchlist/Watchlist'
 import { ContextProps } from '@/types/types'
 import React from 'react'
 import { createContext } from 'vm'
