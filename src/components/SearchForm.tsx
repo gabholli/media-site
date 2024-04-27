@@ -1,7 +1,7 @@
 import { FormComponentProps } from '@/types/types'
 import React from 'react'
 
-const SearchForm: React.FC<FormComponentProps> = ({ submit, name, value, change }) => {
+const SearchForm: React.FC<FormComponentProps> = ({ submit, name }) => {
     return (
         <form className="text-center flex flex-col md:flex-row items-center 
             justify-center gap-4"
@@ -10,8 +10,8 @@ const SearchForm: React.FC<FormComponentProps> = ({ submit, name, value, change 
                 type="text"
                 placeholder="Enter movie name"
                 name={name}
-                value={value.movie || ''}
-                onChange={change}
+            // value={value?.movie || ''}
+            // onChange={change}
             >
             </input>
             <button className="flex justify-center items-center
