@@ -48,7 +48,7 @@ const MovieDetails = () => {
     <>
       <TopLinks />
       <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
-        <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12'>
+        <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
           <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
             src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
             alt="Movie">
