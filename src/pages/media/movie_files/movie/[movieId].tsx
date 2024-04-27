@@ -53,15 +53,20 @@ export default function MovieDetails() {
           alt="Movie">
         </img>
         <h1
-          className='text-center text-3xl'>
+          className='text-center text-3xl font-bold'>
           {moviesData.title}
         </h1>
-        <p className='text-2xl'>Popularity score: {moviesData.popularity}</p>
-        <p className='text-2xl'>Release date: {moviesData.release_date}</p>
+        <p className='text-2xl'><span className='font-semibold'>
+          Popularity score: </span>{moviesData.popularity}</p>
+        <p className='text-2xl'><span className='font-semibold'>
+          Release date:
+        </span> {moviesData.release_date}</p>
         {moviesData.origin_country && <p className='text-2xl'>
-          Country of origin: {moviesData.origin_country[0]}
+          <span className='font-semibold'>
+            Country of origin: </span>
+          {moviesData.origin_country[0]}
         </p>}
-        <p className='text-lg'>{moviesData.overview}</p>
+        <p className='text-lg '>{moviesData.overview}</p>
         <ToWatchlistButton />
       </main>
       <BackToTopButton />
