@@ -7,7 +7,7 @@ type Data = {
 };
 
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req.query
   axios.get("https://api.themoviedb.org/3/search/movie", {
     params: {
@@ -23,3 +23,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       console.error("Error fetching data:", error)
     })
 }
+
+export default handler

@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import SearchForm from './SearchForm'
 
-export default function TopLinks() {
+const TopLinks = () => {
     return (
         <nav className='flex flex-col md:flex-row justify-center items-center mt-6 gap-x-12'>
             <Link
@@ -16,8 +15,8 @@ export default function TopLinks() {
             >
                 Watchlist
             </Link>
-            <SearchForm />
         </nav>
     )
 }
 
+export default TopLinks

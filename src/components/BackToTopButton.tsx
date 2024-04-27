@@ -4,7 +4,7 @@ const BackToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     // Function to detect scroll position
-    function toggleVisibility() {
+    const toggleVisibility = () => {
         if (window.pageYOffset > 300) {  // If the user scrolled more than 300 pixels
             setIsVisible(true);
         } else {
@@ -13,7 +13,7 @@ const BackToTopButton = () => {
     };
 
     // Function to handle the "scroll to top" button click
-    function scrollToTop() {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'  // for smoothly scrolling
@@ -40,4 +40,4 @@ const BackToTopButton = () => {
     );
 };
 
-export default BackToTopButton;
+export default BackToTopButton

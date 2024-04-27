@@ -2,7 +2,8 @@ import BackToTopButton from '@/components/BackToTopButton'
 import React from 'react'
 import Link from 'next/link'
 
-export default function Watchlist() {
+const Watchlist = () => {
+
     return (
         <>
             <Link
@@ -16,3 +17,5 @@ export default function Watchlist() {
         </>
     )
 }
+
+export default Watchlist

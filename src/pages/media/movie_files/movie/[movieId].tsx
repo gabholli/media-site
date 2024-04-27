@@ -5,14 +5,31 @@ import TopLinks from '@/components/TopLinks'
 import SearchForm from '@/components/SearchForm'
 import BackToTopButton from '@/components/BackToTopButton'
 import ToWatchlistButton from '@/components/ToWatchlistButton'
+import { MovieItem, MovieLocalStorage } from '@/types/types'
+import { getFromLocalStorage, saveToLocalStorage } from '@/utils/lcoalStorageFunctions'
 
-export default function MovieDetails() {
+const MovieDetails = () => {
+
+  const movieItem = global?.window?.localStorage?.getItem("movie")
+  let getMovieFromLocalStorage: MovieItem | null = null
+
+  if (movieItem) {
+    try {
+      getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
+    } catch (error) {
+      console.error("Parsing error in getUserFromLocalStorage:", error)
+    }
+  }
 
   const router = useRouter()
   const { query } = router
   const [loading, setLoading] = useState(false)
-  const [moviesData, setMoviesData] = useState<any>([])
-  console.log(router)
+  const [moviesData, setMoviesData] = useState<any>({})
+  const [watchlistValues, setWatchlistValues] = useState([])
+  const [search, setSearch] = useState<any>({
+    movie: getMovieFromLocalStorage
+  })
+
   useEffect(() => {
     setLoading(true)
     if (router.isReady) {
@@ -30,6 +47,17 @@ export default function MovieDetails() {
     }
   }, [router.isReady])
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
+    setSearch(event.target.movie.value)
+    console.log(search)
+  }
+
+  const handleChange = (event: any) => {
+    setSearch({ [event.target.name]: event.target.value })
+    localStorage.setItem("movie", JSON.stringify(event.target.value))
+  }
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-svh">
@@ -41,39 +69,41 @@ export default function MovieDetails() {
     )
   }
 
-
   return (
     <>
       <TopLinks />
+      <SearchForm
+        submit={handleSubmit}
+        name="movie"
+        value={getMovieFromLocalStorage || ""}
+        change={handleChange} />
       <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
-        Movie details here for ID: {query.movieId}
-        <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-12 lg:gap-x-12'>
-          <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
-            src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
-            alt="Movie">
-          </img>
-          <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
-            <h1
-              className='text-center text-3xl font-bold'>
-              {moviesData.title}
-            </h1>
-            <p className='text-2xl'><span className='font-semibold'>
-              Popularity score: </span>{moviesData.popularity}</p>
-            <p className='text-2xl'><span className='font-semibold'>
-              Release date:
-            </span> {moviesData.release_date}</p>
-            {moviesData.origin_country && <p className='text-2xl'>
-              <span className='font-semibold'>
-                Country of origin: </span>
-              {moviesData.origin_country[0]}
-            </p>}
-            <p className='text-lg'>{moviesData.overview}</p>
-            <ToWatchlistButton />
-          </div>
-        </div>
+        <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
+          src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
+          alt="Movie">
+        </img>
+        <h1
+          className='text-center text-3xl font-bold'>
+          {moviesData.title}
+        </h1>
+        <p className='text-2xl'><span className='font-semibold'>
+          Popularity score: </span>{moviesData.popularity}</p>
+        <p className='text-2xl'><span className='font-semibold'>
+          Release date:
+        </span> {moviesData.release_date}</p>
+        {moviesData.origin_country && <p className='text-2xl'>
+          <span className='font-semibold'>
+            Country of origin: </span>
+          {moviesData.origin_country[0]}
+        </p>}
+        <p className='text-lg'>{moviesData.overview}</p>
+        <ToWatchlistButton
+          handleClick={() => saveToLocalStorage("watchlist", moviesData)}
+        />
       </main>
       <BackToTopButton />
     </>
   )
 }
 
+export default MovieDetails

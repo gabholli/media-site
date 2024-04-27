@@ -7,7 +7,7 @@ type Data = {
 };
 
 
-export default async function movieDetails(req: NextApiRequest, res: NextApiResponse) {
+const movieDetails = async (req: NextApiRequest, res: NextApiResponse) => {
     const { movieId } = req.query
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
         params: {
@@ -22,3 +22,5 @@ export default async function movieDetails(req: NextApiRequest, res: NextApiResp
             console.error("Error fetching data:", error)
         })
 }
+
+export default movieDetails

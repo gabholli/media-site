@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface Movie {
     id: number
     poster_path: string
@@ -12,3 +14,25 @@ export interface Movie {
 export interface MovieListInterface {
     movieData: Movie[]
 }
+
+export interface MovieLocalStorage {
+    movie: string
+}
+
+export interface FormComponentProps {
+    submit: (event: React.FormEvent<HTMLFormElement>) => void;
+    change: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    name: string
+    value: any
+}
+
+export interface ContextProps {
+    children: ReactNode
+    movieFromLocalStorage: any
+}
+
+
+// export interface WatchlistButtonComponentProps {
+//     handleClick: any
+//     movieInfo: any
+// }

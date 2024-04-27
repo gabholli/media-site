@@ -1,7 +1,26 @@
+import { FormComponentProps } from '@/types/types'
 import React from 'react'
 
-export default function SearchForm() {
+const SearchForm: React.FC<FormComponentProps> = ({ submit, name, value, change }) => {
     return (
-        <div>Put search form here...</div>
+        <form className="text-center flex flex-col md:flex-row items-center 
+            justify-center gap-4"
+            onSubmit={(e) => submit(e)}>
+            <input className="bg-white text-black border-2 rounded-lg indent-3 h-10 w-64"
+                type="text"
+                placeholder="Enter movie name"
+                name={name}
+                value={value}
+                onChange={(e) => change(e)}
+            >
+            </input>
+            <button className="flex justify-center items-center
+            bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+              px-4 py-2 rounded font-black"
+            >Search
+            </button>
+        </form>
     )
 }
+
+export default SearchForm
