@@ -45,7 +45,6 @@ export default function MovieDetails() {
   return (
     <>
       <TopLinks />
-      <SearchForm />
       <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
         Movie details here for ID: {query.movieId}
         <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-12 lg:gap-x-12'>
