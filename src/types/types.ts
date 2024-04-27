@@ -24,8 +24,7 @@ export interface FormComponentProps {
     // change: (event: React.ChangeEvent<HTMLInputElement>) => void;
     // name: string
     // value: any
-    ref: any
-    defaultValue: any
+    movieRef: any
 }
 
 export interface ContextProps {
@@ -38,6 +37,6 @@ export interface MovieItem {
     movie: string
 }
 
-export interface WatchlistButtonComponentProps {
-    handleClick: any
-}
+// export interface WatchlistButtonComponentProps {
+//     handleClick: any
+// }

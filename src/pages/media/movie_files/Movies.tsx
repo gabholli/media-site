@@ -23,7 +23,7 @@ const Movies = () => {
   const [movieData, setMovieData] = useState<Movie[]>([])
   const [search, setSearch] = useState("")
 
-  const inputRef = useRef("")
+  const inputRef = useRef<HTMLInputElement>(null)
 
 
   useEffect(() => {
@@ -43,9 +43,15 @@ const Movies = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const name = inputRef.current.value
-    setSearch(name)
+    if (inputRef.current !== null) {
+      const name: string = inputRef.current.value
+      console.log(name)
+      setSearch(name)
+    } else {
+      console.log("The input ref is null.")
+    }
   }
+
 
   if (loading) {
     return (

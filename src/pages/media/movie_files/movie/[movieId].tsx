@@ -70,7 +70,6 @@ const MovieDetails = () => {
             </p>}
             <p className='text-lg'>{moviesData.overview}</p>
             <ToWatchlistButton
-              handleClick={() => saveToLocalStorage("watchlist", moviesData)}
             />
           </div>
         </div>
