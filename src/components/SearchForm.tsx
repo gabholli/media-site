@@ -5,13 +5,13 @@ const SearchForm: React.FC<FormComponentProps> = ({ submit, name, value, change 
     return (
         <form className="text-center flex flex-col md:flex-row items-center 
             justify-center gap-4"
-            onSubmit={(e) => submit(e)}>
+            onSubmit={submit}>
             <input className="bg-white text-black border-2 rounded-lg indent-3 h-10 w-64"
                 type="text"
                 placeholder="Enter movie name"
                 name={name}
-                value={value}
-                onChange={(e) => change(e)}
+                value={value.movie || ''}
+                onChange={change}
             >
             </input>
             <button className="flex justify-center items-center

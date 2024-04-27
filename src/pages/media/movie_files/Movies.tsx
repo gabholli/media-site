@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Movie } from '@/types/types'
+import { Movie, MovieItem } from '@/types/types'
 import Link from 'next/link'
 import TopLinks from '@/components/TopLinks';
 import ToWatchlistButton from '@/components/ToWatchlistButton';
@@ -8,12 +8,28 @@ import SearchForm from '@/components/SearchForm';
 
 const Movies = () => {
 
+  const movieItem = global?.window?.localStorage?.getItem("movie")
+  let getMovieFromLocalStorage: MovieItem | null = null
+
+  if (movieItem) {
+    try {
+      getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
+    } catch (error) {
+      console.error("Parsing error in getUserFromLocalStorage:", error)
+    }
+  }
+
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
+  const [search, setSearch] = useState<{ movie: MovieItem | null }>(() => {
+    const movieItem = typeof window !== "undefined" ? localStorage.getItem("movie") : null
+    return { movie: movieItem ? JSON.parse(movieItem) : null }
+  })
+
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`/api/movies/movie?query=${encodeURIComponent("basketball")}`)
+    axios.get(`/api/movies/movie?query=${encodeURIComponent(search.movie)}`)
       .then(response => {
         console.log(response.data.results)
         setMovieData(response.data.results)
@@ -24,7 +40,22 @@ const Movies = () => {
       .finally(() => {
         setLoading(false)
       })
-  }, [])
+  }, [search.movie])
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const newMovie = event.currentTarget.movie.value
+    setSearch({ movie: newMovie })
+    localStorage.setItem("movie", JSON.stringify(newMovie))
+  }
+
+
+  const handleChange = (event: any) => {
+    setSearch(prevState => ({
+      ...prevState,
+      movie: event.target.value
+    }))
+  }
 
   if (loading) {
     return (
@@ -73,7 +104,11 @@ const Movies = () => {
     <>
       <div className='flex justify-center items-center mt-6 gap-x-8'>
         <TopLinks />
-        <SearchForm />
+        <SearchForm
+          submit={handleSubmit}
+          name="movie"
+          value={search.movie}
+          change={handleChange} />
       </div>
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}
