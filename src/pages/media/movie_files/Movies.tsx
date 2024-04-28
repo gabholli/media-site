@@ -29,7 +29,7 @@ const Movies = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`/api/movies/movie?query=${encodeURIComponent("basketball")}`)
+    axios.get(`/api/movies/movie?query=${encodeURIComponent(search)}`)
       .then(response => {
         console.log(response.data.results)
         setMovieData(response.data.results)
