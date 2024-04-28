@@ -19,6 +19,7 @@ const config: Config = {
           "button",
         ],
         "homePageMobile": [
+          "greeting",
           "title",
           "image1",
           "link1",
@@ -26,6 +27,7 @@ const config: Config = {
           "link2",
         ],
         "homePageMedium": [
+          "greeting greeting greeting",
           "title title title",
           "image1 . image2",
           "link1 . link2",
