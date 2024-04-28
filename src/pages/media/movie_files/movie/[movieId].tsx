@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import TopLinks from '@/components/TopLinks'
-import SearchForm from '@/components/SearchForm'
 import BackToTopButton from '@/components/BackToTopButton'
 import ToWatchlistButton from '@/components/ToWatchlistButton'
-import { MovieItem, MovieLocalStorage } from '@/types/types'
-import { getFromLocalStorage, saveToLocalStorage } from '@/utils/lcoalStorageFunctions'
 
 const MovieDetails = () => {
 
