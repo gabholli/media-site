@@ -22,7 +22,7 @@ const Index = () => {
         </Link>
         <Link
           className="grid-in-link2"
-          href=" /media/peopleFiles/People">
+          href="/media/peopleFiles/People">
           People
         </Link>
       </nav>
