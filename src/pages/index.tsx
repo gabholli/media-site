@@ -1,22 +1,31 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Index = () => {
   return (
-    <div className='flex flex-col items-center justify-center min-h-svh'>
-      <h1 className='text-5xl'>Select category of interest:</h1>
-      <nav>
-        <ul className='list-disc'>
-          <li>
-            <Link href="/media/movie_files/Movies">Movies</Link>
-          </li>
-          <li>
-            <Link href="/media/peopleFiles/People">People</Link>
-          </li>
-        </ul>
+    <main className='flex flex-col items-center justify-center min-h-svh'>
+      <nav className='grid grid-areas-homePageMobile lg:grid-areas-homePageMedium 
+      lg:grid-cols-[1fr_100px_1fr] place-items-center px-4 gap-y-14'>
+        <h1 className='text-2xl md:text-5xl grid-in-title'>Select category of interest:</h1>
+        <img
+          className='h-64 w-full bg-cover object-cover md:size-96 grid-in-image1'
+          src="/movie-theater.jpg"></img>
+        <img
+          className='h-64 w-full object-cover md:size-96 grid-in-image2'
+          src="/people.jpg"></img>
+        <Link
+          className="grid-in-link1"
+          href="/media/movie_files/Movies">
+          Movies
+        </Link>
+        <Link
+          className="grid-in-link2"
+          href="/media/peopleFiles/People">
+          People
+        </Link>
       </nav>
-    </div>
+    </main>
   )
 }
 

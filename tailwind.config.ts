@@ -16,7 +16,19 @@ const config: Config = {
           // "popularity",
           "date",
           "votes",
-          "button"
+          "button",
+        ],
+        "homePageMobile": [
+          "title",
+          "image1",
+          "link1",
+          "image2",
+          "link2",
+        ],
+        "homePageMedium": [
+          "title title title",
+          "image1 . image2",
+          "link1 . link2",
         ],
       },
     },
