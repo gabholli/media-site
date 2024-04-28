@@ -46,35 +46,37 @@ const MovieDetails = () => {
 
   return (
     <>
-      <TopLinks />
-      <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
-        <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
-          <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
-            src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
-            alt="Movie">
-          </img>
-          <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
-            <h1
-              className='text-center text-3xl font-bold'>
-              {moviesData.title}
-            </h1>
-            <p className='text-2xl'><span className='font-semibold'>
-              Popularity score: </span>{moviesData.popularity}</p>
-            <p className='text-2xl'><span className='font-semibold'>
-              Release date:
-            </span> {moviesData.release_date}</p>
-            {moviesData.origin_country && <p className='text-2xl'>
-              <span className='font-semibold'>
-                Country of origin: </span>
-              {moviesData.origin_country[0]}
-            </p>}
-            <p className='text-lg'>{moviesData.overview}</p>
-            <ToWatchlistButton
-            />
+      <div className='p-6'>
+        <TopLinks />
+        <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
+          <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
+            <img className="h-96 w-full lg:w-1/2 object-scale-down lg:float-left"
+              src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
+              alt="Movie">
+            </img>
+            <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
+              <h1
+                className='text-center text-3xl font-bold'>
+                {moviesData.title}
+              </h1>
+              <p className='text-2xl'><span className='font-semibold'>
+                Popularity score: </span>{moviesData.popularity}</p>
+              <p className='text-2xl'><span className='font-semibold'>
+                Release date:
+              </span> {moviesData.release_date}</p>
+              {moviesData.origin_country && <p className='text-2xl'>
+                <span className='font-semibold'>
+                  Country of origin: </span>
+                {moviesData.origin_country[0]}
+              </p>}
+              <p className='text-lg'>{moviesData.overview}</p>
+              <ToWatchlistButton
+              />
+            </div>
           </div>
-        </div>
-      </main>
-      <BackToTopButton />
+        </main>
+        <BackToTopButton />
+      </div>
     </>
   )
 }
