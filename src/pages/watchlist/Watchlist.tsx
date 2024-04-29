@@ -44,7 +44,7 @@ const Watchlist = () => {
                         itemToRemove={item.id}
                     />
                     <Link
-                        href={`./item/${item.id}`}
+                        href={`/media/movie_files/movie/${item.id}`}
                         className='flex justify-center items-center
                         bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
                         px-4 py-2 w-full rounded font-black lg:w-44 md:w-72'>
@@ -58,9 +58,9 @@ const Watchlist = () => {
 
     return (
         <>
-            <div className='flex flex-col md:flex-row justify-between items-center mt-9 md:mx-16 '>
+            <div className='flex flex-col md:flex-row justify-between items-center mt-9 md:mx-16 gap-y-4 '>
                 <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
-                <nav className='flex flex-col items-center md:flex-row gap-x-8'>
+                <nav className='flex flex-col items-center md:flex-row gap-x-8 gap-y-4'>
                     <Link
                         className='underline text-xl text-center'
                         href="/">

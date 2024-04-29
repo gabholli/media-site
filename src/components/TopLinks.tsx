@@ -16,6 +16,16 @@ const TopLinks = () => {
             >
                 Watchlist
             </Link>
+            <Link
+                className="underline text-xl"
+                href="/media/movie_files/Movies">
+                Movies
+            </Link>
+            <Link
+                className="underline text-xl"
+                href="/media/peopleFiles/People">
+                People
+            </Link>
         </nav>
     )
 }
