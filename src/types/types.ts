@@ -37,9 +37,9 @@ export interface MovieItem {
     movie: string
 }
 
-// export interface WatchlistButtonComponentProps {
-//     handleClick: any
-// }
+export interface WatchlistButtonComponentProps {
+    data: any
+}
 
 export interface MovieList {
     getFromLocalStorage(key: string): any | null

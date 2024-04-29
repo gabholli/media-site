@@ -7,11 +7,19 @@ import ToWatchlistButton from '@/components/ToWatchlistButton'
 
 const MovieDetails = () => {
 
-
   const router = useRouter()
   const { query } = router
   const [loading, setLoading] = useState(false)
   const [moviesData, setMoviesData] = useState<any>({})
+  const [watchlistData, setWatchlistData] = useState([])
+
+  useEffect(() => {
+    // Access localStorage only on the client side
+    const savedData = localStorage.getItem('myData')
+    if (savedData) {
+      setWatchlistData(JSON.parse(savedData))
+    }
+  }, []);
 
   useEffect(() => {
     setLoading(true)
@@ -29,7 +37,7 @@ const MovieDetails = () => {
         })
     }
   }, [router.isReady, query.movieId])
-
+  console.log(moviesData)
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-svh">
@@ -40,7 +48,6 @@ const MovieDetails = () => {
       </div>
     )
   }
-
   return (
     <>
       <div className='p-6'>
@@ -68,6 +75,7 @@ const MovieDetails = () => {
               </p>}
               <p className='text-lg'>{moviesData.overview}</p>
               <ToWatchlistButton
+                data={moviesData}
               />
             </div>
           </div>

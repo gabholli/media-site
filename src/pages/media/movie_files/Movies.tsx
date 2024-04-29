@@ -47,7 +47,6 @@ const Movies = () => {
     if (inputRef.current !== null) {
       const name: string = inputRef.current.value
       console.log(name)
-      saveToLocalStorage("movie", name)
       setSearch(name)
     } else {
       console.log("The input ref is null.")
