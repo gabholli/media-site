@@ -63,21 +63,31 @@ const Watchlist = () => {
                 '>
                 <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
                 <nav className='flex flex-col items-center md:flex-row gap-x-8 gap-y-4'>
+
                     <Link
                         className='underline text-xl text-center'
                         href="/">
-                        Back to main page
-                    </Link >
+                        Home
+                    </Link>
+
                     <Link
                         className="underline text-xl"
                         href="/media/movie_files/Movies">
                         Movies
                     </Link>
+
                     <Link
                         className="underline text-xl"
                         href="/media/peopleFiles/People">
                         People
                     </Link>
+
+                    <Link
+                        className='underline text-xl'
+                        href="/">
+                        TV
+                    </Link>
+
                     <button
                         className='underline text-xl'
                         onClick={clearWatchlist}>
