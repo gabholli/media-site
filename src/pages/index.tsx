@@ -10,12 +10,12 @@ const Index = () => {
         <h1 className='grid-in-greeting text-3xl lg:text-4xl text-center'>Welcome to the Media Site</h1>
         <h1 className='text-2xl lg:text-3xl grid-in-title text-center'>Select category of interest:</h1>
         <img
-          className='h-64 w-full bg-cover object-cover md:size-96 grid-in-image1'
+          className='h-64 w-full bg-cover object-cover md:size-96 grid-in-image1 rounded-3xl'
           src="/movie-theater.jpg"
           alt="Theater"
         ></img>
         <img
-          className='h-64 w-full object-cover md:size-96 grid-in-image2'
+          className='h-64 w-full object-cover md:size-96 grid-in-image2 rounded-3xl'
           src="/people.jpg"
           alt="People"
         ></img>
