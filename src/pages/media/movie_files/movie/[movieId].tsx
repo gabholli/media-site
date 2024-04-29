@@ -28,7 +28,7 @@ const MovieDetails = () => {
           setLoading(false)
         })
     }
-  }, [router.isReady])
+  }, [router.isReady, query.movieId])
 
   if (loading) {
     return (

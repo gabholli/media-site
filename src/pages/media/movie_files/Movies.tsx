@@ -101,7 +101,7 @@ const Movies = () => {
   return (
     <>
       <div className='flex flex-col lg:flex-row lg:justify-between justify-center 
-        items-center mt-9 lg:mx-16 gap-y-8 gap-x-8'>
+        items-center mt-9 lg:mx-16 gap-y-6 gap-x-8'>
         <h1 className='text-4xl mt-1'>Media Site</h1>
         <TopLinks />
         <SearchForm

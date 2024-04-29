@@ -4,7 +4,7 @@ import React from 'react'
 const SearchForm: React.FC<FormComponentProps> = ({ submit, movieRef }) => {
     return (
         <form className="text-center flex flex-col md:flex-row items-center 
-            justify-center gap-4"
+            justify-center gap-1"
             onSubmit={submit}>
             <input className="bg-white text-black border-2 rounded-lg indent-3 h-10 w-64"
                 type="text"
