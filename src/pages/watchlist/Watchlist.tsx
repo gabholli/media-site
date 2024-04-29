@@ -14,6 +14,7 @@ const Watchlist = () => {
         }
     }, [])
     console.log(watchlistData)
+
     return (
         <>
             <Link
@@ -21,6 +22,16 @@ const Watchlist = () => {
                 href="/">
                 Back to main page
             </Link >
+            <Link
+                className="underline"
+                href="/media/movie_files/Movies">
+                Movies
+            </Link>
+            <Link
+                className="underline"
+                href="/media/peopleFiles/People">
+                People
+            </Link>
             <div>Watchlist</div>
             <BackToTopButton />
 
