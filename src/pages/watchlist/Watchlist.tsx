@@ -94,7 +94,7 @@ const Watchlist = () => {
                 ) : (
                     <div className='grid grid-areas-watchlistPlaceholder min-h-svh'>
                         <h1 className='text-lg mt-9 text-center grid-in-text'
-                        >Watchlist is currently empty...
+                        >Waiting for items...
                         </h1>
                     </div>
                 )

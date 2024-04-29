@@ -63,3 +63,9 @@ export interface MovieList {
 export interface RemoveItemButtonProps {
     itemToRemove: number
 }
+
+export interface ModalProps {
+    isOpen: boolean
+    onClose: () => void
+    children: ReactNode
+}
