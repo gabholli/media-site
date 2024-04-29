@@ -91,14 +91,7 @@ const Watchlist = () => {
                     <h1 className='text-4xl mt-9 text-center'
                     >Watchlist
                     </h1>
-                ) : (
-                    <div className='grid grid-areas-watchlistPlaceholder min-h-svh'>
-                        <h1 className='text-lg mt-9 text-center grid-in-text'
-                        >Waiting for items...
-                        </h1>
-                    </div>
-                )
-
+                ) : null
             }
             <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
                 {watchlistDataMap}
