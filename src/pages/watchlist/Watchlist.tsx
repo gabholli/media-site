@@ -26,7 +26,8 @@ const Watchlist = () => {
         return (
 
             <div key={item.id}
-                className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6'>
+                className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
+                rounded-3xl text-center m-6'>
                 <img className="h-64 w-full object-cover rounded-3xl"
                     src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                     alt="item"
