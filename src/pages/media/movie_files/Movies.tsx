@@ -82,16 +82,13 @@ const Movies = () => {
           <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{movie.vote_average}</span></p>
           <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{movie.vote_count}</span></p>
         </div>
-        <div className='flex gap-x-4'>
-          <Link
-            href={`./movie/${movie.id}`}
-            className='flex justify-center items-center
+        <Link
+          href={`./movie/${movie.id}`}
+          className='flex justify-center items-center
             bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
-              px-4 py-2 rounded font-black'>
-            Details
-          </Link>
-          {/* <ToWatchlistButton /> */}
-        </div>
+              px-4 py-2 w-full rounded font-black'>
+          Details
+        </Link>
       </div >
 
     )
