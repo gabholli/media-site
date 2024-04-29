@@ -15,6 +15,10 @@ const Watchlist = () => {
     }, [])
     console.log(watchlistData)
 
+    const clearWatchlist = () => {
+        localStorage.clear()
+    }
+
     return (
         <>
             <Link
@@ -33,6 +37,7 @@ const Watchlist = () => {
                 People
             </Link>
             <div>Watchlist</div>
+            <button onClick={clearWatchlist}>Clear Watchlist</button>
             <BackToTopButton />
 
         </>
