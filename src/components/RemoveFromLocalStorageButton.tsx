@@ -7,7 +7,7 @@ const RemoveFromLocalStorageButton: React.FC<RemoveItemButtonProps> = ({ itemToR
             const items = JSON.parse(localStorage.getItem('watchlist') || '[]')
             const filteredItems = items.filter((item: { id: number }) => item.id !== itemToRemove)
             localStorage.setItem('watchlist', JSON.stringify(filteredItems))
-            alert("Item removed watchlist.")
+            alert("Item removed from watchlist.")
             window.location.reload()
         }
     }

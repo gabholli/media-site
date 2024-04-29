@@ -32,6 +32,11 @@ const config: Config = {
           "image1 . image2",
           "link1 . link2",
         ],
+        "watchlistPlaceholder": [
+          ". . .",
+          ". text .",
+          ". . .",
+        ]
       },
     },
   },

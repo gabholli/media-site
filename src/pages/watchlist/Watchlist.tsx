@@ -61,10 +61,10 @@ const Watchlist = () => {
     return (
         <>
             <div className='flex flex-col md:flex-row justify-between items-center mt-9 md:mx-16 '>
-                <h1 className='text-4xl mt-1'>Media Site</h1>
+                <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
                 <nav className='flex flex-col items-center md:flex-row gap-x-8'>
                     <Link
-                        className='underline text-xl'
+                        className='underline text-xl text-center'
                         href="/">
                         Back to main page
                     </Link >
@@ -87,9 +87,15 @@ const Watchlist = () => {
             </div>
             {
                 watchlistData.length > 0 ? (
-                    <h1 className='text-4xl mt-9 text-center'>Watchlist</h1>
+                    <h1 className='text-4xl mt-9 text-center'
+                    >Watchlist
+                    </h1>
                 ) : (
-                    null
+                    <div className='grid grid-areas-watchlistPlaceholder min-h-svh'>
+                        <h1 className='text-lg mt-9 text-center grid-in-text'
+                        >Watchlist is currently empty...
+                        </h1>
+                    </div>
                 )
 
             }
