@@ -97,7 +97,7 @@ const Movies = () => {
   return (
     <>
       <div className='flex flex-col lg:flex-row lg:justify-between justify-center 
-        items-center mt-9 lg:mx-16 gap-y-6 gap-x-8'>
+        items-center py-9 lg:mx-16 gap-y-6 gap-x-8'>
         <h1 className='text-4xl mt-1'>Media Site</h1>
         <TopLinks />
         <SearchForm
@@ -105,6 +105,7 @@ const Movies = () => {
           movieRef={inputRef}
         />
       </div>
+      <hr></hr>
       {movieList.length > 0 && <h1 className='text-4xl mt-9 text-center'>Movies</h1>}
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}
