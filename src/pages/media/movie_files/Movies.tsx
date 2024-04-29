@@ -90,7 +90,7 @@ const Movies = () => {
               px-4 py-2 rounded font-black'>
             Details
           </Link>
-          <ToWatchlistButton />
+          {/* <ToWatchlistButton /> */}
         </div>
       </div >
 
