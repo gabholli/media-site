@@ -4,22 +4,15 @@ export interface Movie {
     id: number
     poster_path: string
     title: string
-    // overview: string
     popularity: number
     release_date: string
     vote_average: number
     vote_count: number
 }
 
-export interface WatchlistInterface {
-    id: number
-    poster_path: string
-    title: string
-    // overview: string
-    popularity: number
-    release_date: string
-    vote_average: number
-    vote_count: number
+export interface MovieItem {
+    num: number
+    movie: string
 }
 
 export interface MovieListInterface {
@@ -30,11 +23,20 @@ export interface MovieLocalStorage {
     movie: string
 }
 
+export interface WatchlistInterface {
+    id: number
+    poster_path: string
+    title: string
+    popularity: number
+    release_date: string
+    vote_average: number
+    vote_count: number
+}
+
+
+
 export interface FormComponentProps {
     submit: (event: React.FormEvent<HTMLFormElement>) => void;
-    // change: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    // name: string
-    // value: any
     movieRef: any
 }
 
@@ -62,10 +64,4 @@ export interface MovieList {
 
 export interface RemoveItemButtonProps {
     itemToRemove: number
-}
-
-export interface ModalProps {
-    isOpen: boolean
-    onClose: () => void
-    children: ReactNode
 }
