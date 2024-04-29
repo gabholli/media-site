@@ -1,8 +1,6 @@
 import BackToTopButton from '@/components/BackToTopButton'
 import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
-import MediaContext from '@/context/MediaContext'
-import TopLinks from '@/components/TopLinks'
 import RemoveFromLocalStorageButton from '@/components/RemoveFromLocalStorageButton'
 import { WatchlistInterface } from '@/types/types'
 
