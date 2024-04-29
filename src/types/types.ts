@@ -28,13 +28,16 @@ export interface FormComponentProps {
 }
 
 export interface ContextProps {
-    children: ReactNode
-    movieFromLocalStorage: any
+    value: string
 }
 
 export interface MovieItem {
     num: number
     movie: string
+}
+
+export interface MediaProviderProps {
+    children: ReactNode
 }
 
 export interface WatchlistButtonComponentProps {

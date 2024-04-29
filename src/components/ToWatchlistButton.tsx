@@ -15,14 +15,15 @@ const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) =>
 
     const addItem = (newItem: any) => {
         setMediaData((prevData: any) => {
-            const dataSet = new Set(prevData)
-            dataSet.add(newItem)
-            const updatedData = Array.from(dataSet)
-            localStorage.setItem("watchlist", JSON.stringify(updatedData))
-            return updatedData
-
-        })
-    }
+            const dataIds = new Set(prevData.map((item: { id: any }) => item.id))
+            if (!dataIds.has(newItem.id)) {
+                const updatedData = [...prevData, newItem]
+                localStorage.setItem("watchlist", JSON.stringify(updatedData))
+                return updatedData
+            }
+            return prevData
+        });
+    };
 
     return (
         <button

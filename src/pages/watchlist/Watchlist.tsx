@@ -1,7 +1,7 @@
 import BackToTopButton from '@/components/BackToTopButton'
 import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
-import MediaContext from '@/context/MediaContext'
+import MediaContext from '@/context/MediaProvider'
 
 const Watchlist = () => {
 
