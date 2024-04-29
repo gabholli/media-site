@@ -20,12 +20,12 @@ const Index = () => {
           alt="People"
         ></img>
         <Link
-          className="grid-in-link1"
+          className="grid-in-link1 text-xl"
           href="/media/movie_files/Movies">
           Movies
         </Link>
         <Link
-          className="grid-in-link2"
+          className="grid-in-link2 text-xl"
           href="/media/peopleFiles/People">
           People
         </Link>

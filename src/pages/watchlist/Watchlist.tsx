@@ -49,7 +49,7 @@ const Watchlist = () => {
                         href={`./item/${item.id}`}
                         className='flex justify-center items-center
                         bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
-                        px-4 py-2 w-full rounded font-black'>
+                        px-4 py-2 w-full rounded font-black lg:w-44 md:w-72'>
                         Details
                     </Link>
                 </div>
@@ -64,28 +64,35 @@ const Watchlist = () => {
                 <h1 className='text-4xl mt-1'>Media Site</h1>
                 <nav className='flex flex-col items-center md:flex-row gap-x-8'>
                     <Link
-                        className='underline'
+                        className='underline text-xl'
                         href="/">
                         Back to main page
                     </Link >
                     <Link
-                        className="underline"
+                        className="underline text-xl"
                         href="/media/movie_files/Movies">
                         Movies
                     </Link>
                     <Link
-                        className="underline"
+                        className="underline text-xl"
                         href="/media/peopleFiles/People">
                         People
                     </Link>
                     <button
-                        className='underline'
+                        className='underline text-xl'
                         onClick={clearWatchlist}>
                         Clear Watchlist
                     </button>
                 </nav>
             </div>
-            <h1 className='text-4xl mt-9 text-center'>Watchlist</h1>
+            {
+                watchlistData.length > 0 ? (
+                    <h1 className='text-4xl mt-9 text-center'>Watchlist</h1>
+                ) : (
+                    null
+                )
+
+            }
             <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
                 {watchlistDataMap}
             </div>
