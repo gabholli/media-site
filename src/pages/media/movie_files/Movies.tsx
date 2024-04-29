@@ -105,6 +105,7 @@ const Movies = () => {
           movieRef={inputRef}
         />
       </div>
+      <h1 className='text-4xl mt-9 text-center'>Movies</h1>
       <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
         {movieList}
       </main>

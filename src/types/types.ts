@@ -11,6 +11,17 @@ export interface Movie {
     vote_count: number
 }
 
+export interface WatchlistInterface {
+    id: number
+    poster_path: string
+    title: string
+    // overview: string
+    popularity: number
+    release_date: string
+    vote_average: number
+    vote_count: number
+}
+
 export interface MovieListInterface {
     movieData: Movie[]
 }
@@ -29,6 +40,7 @@ export interface FormComponentProps {
 
 export interface ContextProps {
     value: string
+    checkArrayHasValue: (array: any[]) => boolean
 }
 
 export interface MovieItem {
@@ -46,4 +58,8 @@ export interface WatchlistButtonComponentProps {
 
 export interface MovieList {
     getFromLocalStorage(key: string): any | null
+}
+
+export interface RemoveItemButtonProps {
+    itemToRemove: number
 }

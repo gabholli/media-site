@@ -19,11 +19,14 @@ const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) =>
             if (!dataIds.has(newItem.id)) {
                 const updatedData = [...prevData, newItem]
                 localStorage.setItem("watchlist", JSON.stringify(updatedData))
+                alert("Item added to watchlist.")
                 return updatedData
+            } else {
+                alert("Item already in watchlist.")
             }
             return prevData
-        });
-    };
+        })
+    }
 
     return (
         <button

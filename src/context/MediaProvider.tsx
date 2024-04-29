@@ -8,12 +8,16 @@ const MediaContext = createContext<ContextProps | null>(null)
 
 const MediaProvider = ({ children }: MediaProviderProps) => {
 
-    const contextValue: ContextProps = {
-        value: ""
+    const checkArrayHasValue = (array: any[]) => {
+        let hasValue = array.some(value => value !== undefined &&
+            value !== null && value !== "")
+        return hasValue
     }
 
+    const contextValues = { checkArrayHasValue, value: "" }
+
     return (
-        <MediaContext.Provider value={contextValue}>
+        <MediaContext.Provider value={contextValues}>
             {children}
         </MediaContext.Provider>
     )
