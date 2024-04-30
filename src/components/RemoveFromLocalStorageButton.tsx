@@ -1,5 +1,6 @@
 import { RemoveItemButtonProps } from '@/types/types';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const RemoveFromLocalStorageButton: React.FC<RemoveItemButtonProps> = ({ itemToRemove }) => {
     const handleClick = () => {
@@ -7,7 +8,8 @@ const RemoveFromLocalStorageButton: React.FC<RemoveItemButtonProps> = ({ itemToR
             const items = JSON.parse(localStorage.getItem('watchlist') || '[]')
             const filteredItems = items.filter((item: { id: number }) => item.id !== itemToRemove)
             localStorage.setItem('watchlist', JSON.stringify(filteredItems))
-            alert("Item removed from watchlist.")
+            // alert("Item removed from watchlist.")
+            toast.error("Item removed from watchlist")
             window.location.reload()
         }
     }
