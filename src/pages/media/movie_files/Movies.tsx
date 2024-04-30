@@ -7,23 +7,12 @@ import SearchForm from '@/components/SearchForm';
 
 const Movies = () => {
 
-  const movieItem = global?.window?.localStorage?.getItem("movie")
-  let getMovieFromLocalStorage: MovieItem | null = null
-
-  if (movieItem) {
-    try {
-      getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
-    } catch (error) {
-      console.error("Parsing error in getUserFromLocalStorage:", error)
-    }
-  }
+  const movieItem = global?.window?.localStorage?.getItem("search")
 
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
   const [search, setSearch] = useState("")
-  const [searchValue, setSearchValue] = useState()
-
-
+  const [searchValue, setSearchValue] = useState(movieItem)
 
   useEffect(() => {
     setLoading(true)
@@ -40,17 +29,15 @@ const Movies = () => {
       })
   }, [search])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
-    if (inputRef.current !== null) {
-      const name: string = inputRef.current.value
-      console.log(name)
-      setSearch(name)
-    } else {
-      console.log("The input ref is null.")
-    }
+    setSearch(event.target.searchValue.value)
   }
 
+  const handleChange = (event: any) => {
+    setSearchValue(event.target.value)
+    localStorage.setItem("search", event.target.value)
+  }
 
   if (loading) {
     return (
@@ -105,8 +92,10 @@ const Movies = () => {
           <TopLinks />
           <SearchForm
             submit={handleSubmit}
-            movieRef={inputRef}
+            change={handleChange}
+            value={searchValue}
             placeholderText="Enter movie name..."
+            name="searchValue"
           />
         </div>
       </div>

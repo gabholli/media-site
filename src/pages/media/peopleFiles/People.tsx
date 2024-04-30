@@ -1,17 +1,19 @@
 import SearchForm from '@/components/SearchForm'
 import TopLinks from '@/components/TopLinks'
-import { PeopleInterface } from '@/types/types'
+import { MovieItem, PeopleInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 const People = () => {
 
+    const movieItem = global?.window?.localStorage?.getItem("search")
+
     const [loading, setLoading] = useState(false)
     const [peopleData, setPeopleData] = useState<PeopleInterface[]>([])
     const [search, setSearch] = useState("")
+    const [searchValue, setSearchValue] = useState(movieItem)
 
-    const inputRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
         setLoading(true)
@@ -55,15 +57,14 @@ const People = () => {
         )
     })
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault()
-        if (inputRef.current !== null) {
-            const name: string = inputRef.current.value
-            console.log(name)
-            setSearch(name)
-        } else {
-            console.log("The input ref is null.")
-        }
+        setSearch(event.target.searchValue.value)
+    }
+
+    const handleChange = (event: any) => {
+        setSearchValue(event.target.value)
+        localStorage.setItem("search", event.target.value)
     }
 
     if (loading) {
@@ -86,8 +87,10 @@ const People = () => {
                     <TopLinks />
                     <SearchForm
                         submit={handleSubmit}
-                        movieRef={inputRef}
+                        change={handleChange}
+                        value={searchValue}
                         placeholderText="Enter person's name..."
+                        name="searchValue"
                     />
                 </div>
             </div>
