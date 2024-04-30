@@ -60,11 +60,11 @@ const MovieDetails = () => {
         <hr></hr>
         <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
           <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
-            <img className="h-96 w-full lg:w-1/2 object-scale-down rounded-3xl"
-              src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
-              alt="Movie">
-            </img>
             <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
+              <img className="h-96 w-full lg:w-1/2 object-scale-down rounded-3xl"
+                src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
+                alt="Movie">
+              </img>
               <h1
                 className='text-center text-3xl font-bold'>
                 {moviesData.title}
@@ -79,7 +79,7 @@ const MovieDetails = () => {
                   Country of origin: </span>
                 {moviesData.origin_country[0]}
               </p>}
-              <p className='text-lg'>{moviesData.overview}</p>
+              <p className='text-lg text-left indent-12'>{moviesData.overview}</p>
               <ToWatchlistButton
                 data={moviesData}
               />
