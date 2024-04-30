@@ -51,7 +51,13 @@ const PeopleDetails = () => {
     return (
         <>
             <div className='p-6'>
-                <TopLinks />
+                <div className='flex flex-col justify-between items-center 
+                    lg:grid lg:grid-areas-topLinksDetails
+                    pb-9 pt-2 lg:mx-16 gap-y-6 gap-x-8'>
+                    <h1 className='grid-in-title text-4xl mt-1 text-center'>Media Site</h1>
+                    <TopLinks />
+                </div>
+                <hr></hr>
                 <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
                     <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
                         <img className="h-96 w-full lg:w-1/2 object-scale-down rounded-3xl"

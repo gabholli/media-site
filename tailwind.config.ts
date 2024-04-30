@@ -46,7 +46,13 @@ const config: Config = {
           "home . tv",
           "movies . people",
           ". clear ."
-        ]
+        ],
+        "topLinksLarge": [
+          "title links search",
+        ],
+        "topLinksDetails": [
+          "title links",
+        ],
       },
     },
   },

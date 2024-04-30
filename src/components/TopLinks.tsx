@@ -4,7 +4,7 @@ import Link from 'next/link'
 const TopLinks = () => {
     return (
         <nav className='grid grid-areas-topLinksMobile
-            items-center gap-y-4 gap-x-8 text-center md:flex'>
+            items-center gap-y-4 gap-x-8 text-center md:flex justify-center'>
 
             <Link
                 className='grid-in-home underline text-xl'

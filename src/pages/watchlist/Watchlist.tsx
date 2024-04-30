@@ -96,8 +96,8 @@ const Watchlist = () => {
         <>
             <div className='flex flex-col md:flex-row justify-between items-center py-9 md:mx-16 gap-y-4
                 '>
-                <h1 className='text-4xl mt-1 text-center'>Media Site - Favorites</h1>
-                <nav className='md:flex flex-col items-center md:flex-row md:gap-x-4 md:gap-y-4
+                <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
+                <nav className='md:flex flex-col place-items-center md:flex-row md:gap-x-4 md:gap-y-4
                     grid grid-areas-topLinksMobileFavorites gap-y-8'>
 
                     <Link
