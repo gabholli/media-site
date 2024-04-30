@@ -48,6 +48,7 @@ const PeopleDetails = () => {
             </div>
         )
     }
+
     return (
         <>
             <div className='p-6'>

@@ -37,7 +37,7 @@ const MovieDetails = () => {
         })
     }
   }, [router.isReady, query.movieId])
-  console.log(moviesData)
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-svh">
