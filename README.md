@@ -19,9 +19,7 @@ This site was created using the following:
 - To execute, navigate within your web browser to https://gabholli-media-site.netlify.app
 
 ## Authors
-Gabe Hollifield
-
-## Version History
+Gabe Hollifield 
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
