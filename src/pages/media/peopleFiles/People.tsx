@@ -8,11 +8,20 @@ import React, { useEffect, useRef, useState } from 'react'
 const People = () => {
 
     const movieItem = global?.window?.localStorage?.getItem("search")
+    let getMovieFromLocalStorage: MovieItem | null = null
+
+    if (movieItem) {
+        try {
+            getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
+        } catch (error) {
+            console.error("Parsing error in getUserFromLocalStorage:", error)
+        }
+    }
 
     const [loading, setLoading] = useState(false)
     const [peopleData, setPeopleData] = useState<PeopleInterface[]>([])
     const [search, setSearch] = useState("")
-    const [searchValue, setSearchValue] = useState(movieItem)
+    const [searchValue, setSearchValue] = useState(getMovieFromLocalStorage)
 
 
     useEffect(() => {
@@ -32,9 +41,9 @@ const People = () => {
 
     const peopleList = peopleData?.map(person => {
         return (
-            <>
+            <div key={person.id}>
                 {person.profile_path && (
-                    <div key={person.id}
+                    <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
               rounded-3xl'>
                         <img className="h-64 w-full object-cover rounded-3xl"
@@ -53,7 +62,7 @@ const People = () => {
                         </Link>
                     </div >
                 )}
-            </>
+            </div>
         )
     })
 
@@ -64,7 +73,7 @@ const People = () => {
 
     const handleChange = (event: any) => {
         setSearchValue(event.target.value)
-        localStorage.setItem("search", event.target.value)
+        localStorage.setItem("search", JSON.stringify(event.target.value))
     }
 
     if (loading) {

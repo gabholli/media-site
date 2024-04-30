@@ -24,9 +24,9 @@ const Watchlist = () => {
 
     const watchlistMovieData = watchlistData?.map(item => {
         return (
-            <>
+            <div key={item.id}>
                 {!item.name && (
-                    <div key={item.id}
+                    <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
                         <img className="h-64 w-full object-cover rounded-3xl"
@@ -56,15 +56,15 @@ const Watchlist = () => {
                     </div >
                 )
                 }
-            </>
+            </div>
         )
     })
 
     const watchlistPeopleData = watchlistData?.map(person => {
         return (
-            <>
+            <div key={person.id}>
                 {person.name && (
-                    <div key={person.id}
+                    <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
                         <img className="h-64 w-full object-cover rounded-3xl"
@@ -88,7 +88,7 @@ const Watchlist = () => {
                     </div >
                 )
                 }
-            </>
+            </div>
         )
     })
 

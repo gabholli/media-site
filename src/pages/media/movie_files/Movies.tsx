@@ -8,11 +8,19 @@ import SearchForm from '@/components/SearchForm';
 const Movies = () => {
 
   const movieItem = global?.window?.localStorage?.getItem("search")
+  let getMovieFromLocalStorage: MovieItem | null = null
 
+  if (movieItem) {
+    try {
+      getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
+    } catch (error) {
+      console.error("Parsing error in getUserFromLocalStorage:", error)
+    }
+  }
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
   const [search, setSearch] = useState("")
-  const [searchValue, setSearchValue] = useState(movieItem)
+  const [searchValue, setSearchValue] = useState(getMovieFromLocalStorage)
 
   useEffect(() => {
     setLoading(true)
@@ -36,7 +44,7 @@ const Movies = () => {
 
   const handleChange = (event: any) => {
     setSearchValue(event.target.value)
-    localStorage.setItem("search", event.target.value)
+    localStorage.setItem("search", JSON.stringify(event.target.value))
   }
 
   if (loading) {
@@ -52,9 +60,9 @@ const Movies = () => {
 
   const movieList = movieData?.map(movie => {
     return (
-      <>
+      <div key={movie.id}>
         {movie.poster_path && (
-          <div key={movie.id}
+          <div
             className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
           rounded-3xl'>
             <img className="h-64 w-full object-cover rounded-3xl"
@@ -79,7 +87,7 @@ const Movies = () => {
           </div>
         )
         }
-      </>
+      </div>
     )
   })
 
