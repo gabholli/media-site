@@ -104,6 +104,7 @@ const Movies = () => {
         <SearchForm
           submit={handleSubmit}
           movieRef={inputRef}
+          placeholderText='Enter movie name...'
         />
       </div>
       <hr></hr>
