@@ -96,35 +96,36 @@ const Watchlist = () => {
         <>
             <div className='flex flex-col md:flex-row justify-between items-center py-9 md:mx-16 gap-y-4
                 '>
-                <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
-                <nav className='flex flex-col items-center md:flex-row gap-x-8 gap-y-4'>
+                <h1 className='text-4xl mt-1 text-center'>Media Site - Favorites</h1>
+                <nav className='md:flex flex-col items-center md:flex-row md:gap-x-4 md:gap-y-4
+                    grid grid-areas-topLinksMobileFavorites gap-y-8'>
 
                     <Link
-                        className='underline text-xl text-center'
+                        className='grid-in-home underline text-xl text-center'
                         href="/">
                         Home
                     </Link>
 
                     <Link
-                        className="underline text-xl"
+                        className="grid-in-movies underline text-xl"
                         href="/media/movie_files/Movies">
                         Movies
                     </Link>
 
                     <Link
-                        className="underline text-xl"
+                        className="grid-in-people underline text-xl"
                         href="/media/peopleFiles/People">
                         People
                     </Link>
 
                     <Link
-                        className='underline text-xl'
+                        className='grid-in-tv underline text-xl'
                         href="/">
                         TV
                     </Link>
 
                     <button
-                        className='underline text-xl'
+                        className='grid-in-clear underline text-xl'
                         onClick={clearWatchlist}>
                         Clear Favorites
                     </button>

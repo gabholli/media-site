@@ -36,6 +36,16 @@ const config: Config = {
           ". . .",
           ". text .",
           ". . .",
+        ],
+        "topLinksMobile": [
+          "home . favorites",
+          "movies . people",
+          ". tv ."
+        ],
+        "topLinksMobileFavorites": [
+          "home . tv",
+          "movies . people",
+          ". clear ."
         ]
       },
     },
