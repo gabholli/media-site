@@ -3,9 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Movie, MovieItem } from '@/types/types'
 import Link from 'next/link'
 import TopLinks from '@/components/TopLinks';
-import ToWatchlistButton from '@/components/ToWatchlistButton';
 import SearchForm from '@/components/SearchForm';
-import { saveToLocalStorage } from '@/utils/lcoalStorageFunctions';
 
 const Movies = () => {
 
@@ -67,31 +65,34 @@ const Movies = () => {
 
   const movieList = movieData?.map(movie => {
     return (
-
-      <div key={movie.id}
-        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
+      <>
+        {movie.poster_path && (
+          <div key={movie.id}
+            className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
           rounded-3xl'>
-        <img className="h-64 w-full object-cover rounded-3xl"
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-          alt="Movie"
-        ></img>
-        <h1 className='text-3xl font-bold'>{movie.title}</h1>
-        {/* <p className='text-left text-sm'>{movie.overview}</p> */}
-        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{movie.popularity}</span></p>
-        <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{movie.release_date}</span></p>
-        <div className='flex gap-x-4'>
-          <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{movie.vote_average}</span></p>
-          <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{movie.vote_count}</span></p>
-        </div>
-        <Link
-          href={`./movie/${movie.id}`}
-          className='flex justify-center items-center
+            <img className="h-64 w-full object-cover rounded-3xl"
+              src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+              alt="Movie"
+            ></img>
+            <h1 className='text-3xl font-bold'>{movie.title}</h1>
+            {/* <p className='text-left text-sm'>{movie.overview}</p> */}
+            <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{movie.popularity}</span></p>
+            <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{movie.release_date}</span></p>
+            <div className='flex gap-x-4'>
+              <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{movie.vote_average}</span></p>
+              <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{movie.vote_count}</span></p>
+            </div>
+            <Link
+              href={`./movie/${movie.id}`}
+              className='flex justify-center items-center
             bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
               px-4 py-2 w-full rounded font-black'>
-          Details
-        </Link>
-      </div >
-
+              Details
+            </Link>
+          </div>
+        )
+        }
+      </>
     )
   })
 

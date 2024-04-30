@@ -15,11 +15,11 @@ const MovieDetails = () => {
 
   useEffect(() => {
     // Access localStorage only on the client side
-    const savedData = localStorage.getItem('myData')
+    const savedData = localStorage.getItem('watchlist')
     if (savedData) {
       setWatchlistData(JSON.parse(savedData))
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     setLoading(true)

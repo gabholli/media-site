@@ -22,38 +22,73 @@ const Watchlist = () => {
         window.location.reload()
     }
 
-    const watchlistDataMap = watchlistData?.map(item => {
+    const watchlistMovieData = watchlistData?.map(item => {
         return (
-
-            <div key={item.id}
-                className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
+            <>
+                {!item.name && (
+                    <div key={item.id}
+                        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
-                <img className="h-64 w-full object-cover rounded-3xl"
-                    src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-                    alt="item"
-                ></img>
-                <h1 className='text-3xl font-bold'>{item.title}</h1>
-                {/* <p className='text-left text-sm'>{item.overview}</p> */}
-                <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{item.popularity}</span></p>
-                <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{item.release_date}</span></p>
-                <div className='flex gap-x-4'>
-                    <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{item.vote_average}</span></p>
-                    <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{item.vote_count}</span></p>
-                </div>
-                <div className='flex gap-x-12'>
-                    <RemoveFromLocalStorageButton
-                        itemToRemove={item.id}
-                    />
-                    <Link
-                        href={`/media/movie_files/movie/${item.id}`}
-                        className='flex justify-center items-center
+                        <img className="h-64 w-full object-cover rounded-3xl"
+                            src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                            alt="item"
+                        ></img>
+                        <h1 className='text-3xl font-bold'>{item.title}</h1>
+                        {/* <p className='text-left text-sm'>{item.overview}</p> */}
+                        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{item.popularity}</span></p>
+                        <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{item.release_date}</span></p>
+                        <div className='flex gap-x-4'>
+                            <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{item.vote_average}</span></p>
+                            <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{item.vote_count}</span></p>
+                        </div>
+                        <div className='flex gap-x-12'>
+                            <RemoveFromLocalStorageButton
+                                itemToRemove={item.id}
+                            />
+                            <Link
+                                href={`/media/movie_files/movie/${item.id}`}
+                                className='flex justify-center items-center
                         bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
                         px-4 py-2 w-full rounded font-black lg:w-44 md:w-72'>
-                        Details
-                    </Link>
-                </div>
-            </div >
+                                Details
+                            </Link>
+                        </div>
+                    </div >
+                )
+                }
+            </>
+        )
+    })
 
+    const watchlistPeopleData = watchlistData?.map(person => {
+        return (
+            <>
+                {person.name && (
+                    <div key={person.id}
+                        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
+                rounded-3xl text-center m-6'>
+                        <img className="h-64 w-full object-cover rounded-3xl"
+                            src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
+                            alt="item"
+                        ></img>
+                        <h1 className='text-3xl font-bold'>{person.name}</h1>
+                        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{person.popularity}</span></p>
+                        <div className='flex gap-x-12'>
+                            <RemoveFromLocalStorageButton
+                                itemToRemove={person.id}
+                            />
+                            <Link
+                                href={`/media/peopleFiles/people/${person.id}`}
+                                className='flex justify-center items-center
+                        bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+                        px-4 py-2 w-full rounded font-black lg:w-44 md:w-72'>
+                                Details
+                            </Link>
+                        </div>
+                    </div >
+                )
+                }
+            </>
         )
     })
 
@@ -91,7 +126,7 @@ const Watchlist = () => {
                     <button
                         className='underline text-xl'
                         onClick={clearWatchlist}>
-                        Clear Watchlist
+                        Clear Favorites
                     </button>
                 </nav>
             </div>
@@ -99,12 +134,13 @@ const Watchlist = () => {
             {
                 watchlistData.length > 0 ? (
                     <h1 className='text-4xl mt-9 text-center'
-                    >Watchlist
+                    >Favorites
                     </h1>
                 ) : null
             }
             <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
-                {watchlistDataMap}
+                {watchlistMovieData}
+                {watchlistPeopleData}
             </div>
             <BackToTopButton />
 

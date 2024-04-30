@@ -5,14 +5,13 @@ import toast from 'react-hot-toast'
 const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) => {
 
     const [mediaData, setMediaData] = useState<any>([])
-    const [modalOpen, setModalOpen] = useState(false)
 
     const addToast = () => {
-        toast.success("You have added this item to the watchlist")
+        toast.success("You have added this item to the favorites list")
     }
 
     const alreadyThereToast = () => {
-        toast.error("This item is already in the watchlist")
+        toast.error("This item is already in the favorites list")
     }
 
     useEffect(() => {
@@ -39,8 +38,6 @@ const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) =>
         })
     }
 
-    const toggleModal = () => setModalOpen(!modalOpen)
-
     return (
         <>
             <button
@@ -49,7 +46,7 @@ const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) =>
             bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
             px-4 py-2 rounded font-black
             md:w-48 block m-auto'>
-                Add to watchlist
+                Add to Favorites
             </button>
         </>
     )

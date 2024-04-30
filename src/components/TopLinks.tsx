@@ -16,7 +16,7 @@ const TopLinks = () => {
                 className='underline text-xl'
                 href="/watchlist/Watchlist"
             >
-                Watchlist
+                Favorites
             </Link>
 
             <Link
