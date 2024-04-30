@@ -10,6 +10,9 @@ const RemoveFromLocalStorageButton: React.FC<RemoveItemButtonProps> = ({ itemToR
             localStorage.setItem('watchlist', JSON.stringify(filteredItems))
             // alert("Item removed from watchlist.")
             toast.error("Item removed from favorites list")
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
         }
     }
 
