@@ -62,7 +62,7 @@ const PeopleDetails = () => {
                 <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
                     <div className='flex lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
                         <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
-                            <img className="h-96 w-full lg:w-1/2 object-scale-down rounded-3xl"
+                            <img className="h-96 w-full lg:w-1/2 object-cover rounded-3xl"
                                 src={`https://image.tmdb.org/t/p/original${peopleData.profile_path}`}
                                 alt="Movie">
                             </img>
@@ -76,7 +76,7 @@ const PeopleDetails = () => {
                                 Birthplace: </span>{peopleData.place_of_birth}</p>
                             <p className='text-2xl'><span className='font-semibold'>
                                 Popularity score: </span>{peopleData.popularity}</p>
-                            <p className='text-2xl text-left indent-12'><span className='font-semibold'>
+                            <p className='text-2xl text-center'><span className='font-semibold'>
                                 Biography: </span>{peopleData.biography}</p>
                             <ToWatchlistButton
                                 data={peopleData}

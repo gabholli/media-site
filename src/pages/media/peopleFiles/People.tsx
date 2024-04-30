@@ -1,17 +1,28 @@
 import SearchForm from '@/components/SearchForm'
 import TopLinks from '@/components/TopLinks'
-import { PeopleInterface } from '@/types/types'
+import { MovieItem, PeopleInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 const People = () => {
 
+    const movieItem = global?.window?.localStorage?.getItem("search")
+    let getMovieFromLocalStorage: MovieItem | null = null
+
+    if (movieItem) {
+        try {
+            getMovieFromLocalStorage = JSON.parse(movieItem) as MovieItem
+        } catch (error) {
+            console.error("Parsing error in getUserFromLocalStorage:", error)
+        }
+    }
+
     const [loading, setLoading] = useState(false)
     const [peopleData, setPeopleData] = useState<PeopleInterface[]>([])
     const [search, setSearch] = useState("")
+    const [searchValue, setSearchValue] = useState(getMovieFromLocalStorage)
 
-    const inputRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
         setLoading(true)
@@ -30,9 +41,9 @@ const People = () => {
 
     const peopleList = peopleData?.map(person => {
         return (
-            <>
+            <React.Fragment key={person.id}>
                 {person.profile_path && (
-                    <div key={person.id}
+                    <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
               rounded-3xl'>
                         <img className="h-64 w-full object-cover rounded-3xl"
@@ -51,19 +62,18 @@ const People = () => {
                         </Link>
                     </div >
                 )}
-            </>
+            </React.Fragment>
         )
     })
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault()
-        if (inputRef.current !== null) {
-            const name: string = inputRef.current.value
-            console.log(name)
-            setSearch(name)
-        } else {
-            console.log("The input ref is null.")
-        }
+        setSearch(event.target.searchValue.value)
+    }
+
+    const handleChange = (event: any) => {
+        setSearchValue(event.target.value)
+        localStorage.setItem("search", JSON.stringify(event.target.value))
     }
 
     if (loading) {
@@ -86,8 +96,10 @@ const People = () => {
                     <TopLinks />
                     <SearchForm
                         submit={handleSubmit}
-                        movieRef={inputRef}
+                        change={handleChange}
+                        value={searchValue}
                         placeholderText="Enter person's name..."
+                        name="searchValue"
                     />
                 </div>
             </div>

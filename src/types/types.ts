@@ -48,7 +48,9 @@ export interface WatchlistInterface {
 
 export interface FormComponentProps {
     submit: (event: React.FormEvent<HTMLFormElement>) => void;
-    movieRef: any
+    change: any
+    value: any
+    name: any
     placeholderText: string
 }
 
