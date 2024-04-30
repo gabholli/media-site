@@ -60,7 +60,7 @@ const Movies = () => {
 
   const movieList = movieData?.map(movie => {
     return (
-      <div key={movie.id}>
+      <React.Fragment key={movie.id}>
         {movie.poster_path && (
           <div
             className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
@@ -87,7 +87,7 @@ const Movies = () => {
           </div>
         )
         }
-      </div>
+      </React.Fragment>
     )
   })
 

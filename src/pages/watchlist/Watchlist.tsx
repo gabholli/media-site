@@ -24,7 +24,7 @@ const Watchlist = () => {
 
     const watchlistMovieData = watchlistData?.map(item => {
         return (
-            <div key={item.id}>
+            <React.Fragment key={item.id}>
                 {!item.name && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
@@ -56,13 +56,13 @@ const Watchlist = () => {
                     </div >
                 )
                 }
-            </div>
+            </React.Fragment>
         )
     })
 
     const watchlistPeopleData = watchlistData?.map(person => {
         return (
-            <div key={person.id}>
+            <React.Fragment key={person.id}>
                 {person.name && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
@@ -88,7 +88,7 @@ const Watchlist = () => {
                     </div >
                 )
                 }
-            </div>
+            </React.Fragment>
         )
     })
 

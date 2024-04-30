@@ -41,7 +41,7 @@ const People = () => {
 
     const peopleList = peopleData?.map(person => {
         return (
-            <div key={person.id}>
+            <React.Fragment key={person.id}>
                 {person.profile_path && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
@@ -62,7 +62,7 @@ const People = () => {
                         </Link>
                     </div >
                 )}
-            </div>
+            </React.Fragment>
         )
     })
 
