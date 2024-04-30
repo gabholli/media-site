@@ -21,8 +21,8 @@ const Movies = () => {
   const [loading, setLoading] = useState(false)
   const [movieData, setMovieData] = useState<Movie[]>([])
   const [search, setSearch] = useState("")
+  const [searchValue, setSearchValue] = useState()
 
-  const inputRef = useRef<HTMLInputElement>(null)
 
 
   useEffect(() => {
