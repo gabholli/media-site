@@ -1,6 +1,6 @@
 import SearchForm from '@/components/SearchForm'
 import TopLinks from '@/components/TopLinks'
-import { People } from '@/types/types'
+import { PeopleInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const People = () => {
 
     const [loading, setLoading] = useState(false)
-    const [peopleData, setPeopleData] = useState<People[]>([])
+    const [peopleData, setPeopleData] = useState<PeopleInterface[]>([])
     const [search, setSearch] = useState("")
 
     const inputRef = useRef<HTMLInputElement>(null)

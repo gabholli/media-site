@@ -23,7 +23,7 @@ export interface MovieLocalStorage {
     movie: string
 }
 
-export interface People {
+export interface PeopleInterface {
     id: number
     known_for: any
     known_for_department: string
@@ -33,8 +33,10 @@ export interface People {
 }
 
 export interface WatchlistInterface {
+    name: any
     id: number
     poster_path: string
+    profile_path: string
     title: string
     popularity: number
     release_date: string
