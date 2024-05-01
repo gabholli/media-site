@@ -43,6 +43,10 @@ export interface TVInterface {
 }
 
 export interface WatchlistInterface {
+    overview: any
+    place_of_birth: any
+    revenue: any
+    first_air_date: any
     name: any
     id: number
     poster_path: string

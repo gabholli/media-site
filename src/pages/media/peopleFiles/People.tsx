@@ -101,7 +101,7 @@ const People = () => {
                     <SearchForm
                         submit={handleSubmit}
                         change={handleChange}
-                        value={searchValue}
+                        value={searchValue || ""}
                         placeholderText="Enter person's name..."
                         name="searchValue"
                     />

@@ -35,13 +35,13 @@ const Watchlist = () => {
     const watchlistMovieData = watchlistData?.map(item => {
         return (
             <React.Fragment key={item.id}>
-                {item.revenue && (
+                {item.original_title && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
                         <img className="h-64 w-full object-scale-down rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-                            alt="item"
+                            alt="Movie"
                         ></img>
                         <h1 className='text-3xl font-bold'>{item.title}</h1>
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
@@ -118,7 +118,6 @@ const Watchlist = () => {
                             alt="Movie"
                         ></img>
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
-                        {/* <p className='text-left text-sm'>{movie.overview}</p> */}
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{show.popularity}</span></p>
                         <p><span className='font-semibold text-2xl'>First airing date: </span>

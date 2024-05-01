@@ -107,7 +107,7 @@ const Movies = () => {
           <SearchForm
             submit={handleSubmit}
             change={handleChange}
-            value={searchValue}
+            value={searchValue || ""}
             placeholderText="Enter movie name..."
             name="searchValue"
           />

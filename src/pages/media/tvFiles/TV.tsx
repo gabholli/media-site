@@ -50,7 +50,7 @@ const TV = () => {
               rounded-3xl'>
                         <img className="h-64 w-full object-scale-down rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
-                            alt="Movie"
+                            alt="TV show"
                         ></img>
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
                         {/* <p className='text-left text-sm'>{movie.overview}</p> */}
@@ -109,7 +109,7 @@ const TV = () => {
                     <SearchForm
                         submit={handleSubmit}
                         change={handleChange}
-                        value={searchValue}
+                        value={searchValue || ""}
                         placeholderText="Enter TV show name..."
                         name="searchValue"
                     />
