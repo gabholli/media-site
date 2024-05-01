@@ -70,13 +70,13 @@ const PeopleDetails = () => {
                                 className='text-center text-3xl font-bold'>
                                 {peopleData.name}
                             </h1>
-                            <p className='text-2xl'><span className='font-semibold'>
+                            <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Known for: </span>{peopleData.known_for_department}</p>
-                            <p className='text-2xl'><span className='font-semibold'>
+                            <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Birthplace: </span>{peopleData.place_of_birth}</p>
-                            <p className='text-2xl'><span className='font-semibold'>
+                            <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Popularity score: </span>{peopleData.popularity}</p>
-                            <p className='text-2xl text-center'><span className='font-semibold'>
+                            <p className='text-xl text-center'><span className='font-semibold text-2xl'>
                                 Biography: </span>{peopleData.biography}</p>
                             <ToWatchlistButton
                                 data={peopleData}

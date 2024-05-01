@@ -69,13 +69,13 @@ const MovieDetails = () => {
                 className='text-center text-3xl font-bold'>
                 {moviesData.title}
               </h1>
-              <p className='text-2xl'><span className='font-semibold'>
+              <p className='text-xl'><span className='font-semibold text-2xl'>
                 Popularity score: </span>{moviesData.popularity}</p>
-              <p className='text-2xl'><span className='font-semibold'>
+              <p className='text-xl'><span className='font-semibold text-2xl'>
                 Release date:
               </span> {moviesData.release_date}</p>
-              {moviesData.origin_country && <p className='text-2xl'>
-                <span className='font-semibold'>
+              {moviesData.origin_country && <p className='text-xl'>
+                <span className='font-semibold text-2xl'>
                   Country of origin: </span>
                 {moviesData.origin_country[0]}
               </p>}

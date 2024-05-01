@@ -45,11 +45,15 @@ const Watchlist = () => {
                         ></img>
                         <h1 className='text-3xl font-bold'>{item.title}</h1>
                         {/* <p className='text-left text-sm'>{item.overview}</p> */}
-                        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{item.popularity}</span></p>
-                        <p><span className='font-semibold'>Release date: </span><span className='font-normal'>{item.release_date}</span></p>
+                        <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                            <span className='font-normal text-xl'>{item.popularity}</span></p>
+                        <p><span className='font-semibold text-2xl'>Release date: </span>
+                            <span className='font-normal text-xl'>{item.release_date}</span></p>
                         <div className='flex gap-x-4'>
-                            <p><span className='font-semibold'>Average votes: </span><span className='font-normal'>{item.vote_average}</span></p>
-                            <p><span className='font-semibold'>Vote count: </span><span className='font-normal'>{item.vote_count}</span></p>
+                            <p><span className='font-semibold text-2xl'>Average votes: </span>
+                                <span className='font-normal text-xl'>{item.vote_average}</span></p>
+                            <p><span className='font-semibold text-2xl'>Vote count: </span>
+                                <span className='font-normal text-xl'>{item.vote_count}</span></p>
                         </div>
                         <div className='flex gap-x-12'>
                             <RemoveFromLocalStorageButton
@@ -77,12 +81,13 @@ const Watchlist = () => {
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
-                        <img className="h-64 md:h-64 w-full object-cover rounded-3xl"
+                        <img className="h-64 w-full object-cover rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                             alt="item"
                         ></img>
                         <h1 className='text-3xl font-bold'>{person.name}</h1>
-                        <p><span className='font-semibold'>Popularity score: </span><span className='font-normal'>{person.popularity}</span></p>
+                        <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                            <span className='font-normal text-xl'>{person.popularity}</span></p>
                         <div className='flex gap-x-12'>
                             <RemoveFromLocalStorageButton
                                 itemToRemove={person.id}
