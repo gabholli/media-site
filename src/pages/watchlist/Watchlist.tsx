@@ -33,9 +33,9 @@ const Watchlist = () => {
     }
 
     const watchlistMovieData = watchlistData?.map(item => {
-        return (
-            <React.Fragment key={item.id}>
-                {item.original_title && (
+        if ("revenue" in item) {
+            return (
+                <React.Fragment key={item.id}>
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
@@ -67,16 +67,16 @@ const Watchlist = () => {
                             </Link>
                         </div>
                     </div >
-                )
-                }
-            </React.Fragment>
-        )
+                </React.Fragment>
+            )
+        }
+        return null
     })
 
     const watchlistPeopleData = watchlistData?.map(person => {
-        return (
-            <React.Fragment key={person.id}>
-                {person.place_of_birth && (
+        if ("place_of_birth" in person) {
+            return (
+                <React.Fragment key={person.id}>
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
@@ -100,16 +100,16 @@ const Watchlist = () => {
                             </Link>
                         </div>
                     </div >
-                )
-                }
-            </React.Fragment>
-        )
+                </React.Fragment>
+            )
+        }
+        return null
     })
 
     const watchlistTVData = watchlistData?.map(show => {
-        return (
-            <React.Fragment key={show.id}>
-                {show.first_air_date && (
+        if ("first_air_date" in show) {
+            return (
+                <React.Fragment key={show.id}>
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
               rounded-3xl'>
@@ -136,10 +136,10 @@ const Watchlist = () => {
                             Details
                         </Link>
                     </div>
-                )
-                }
-            </React.Fragment>
-        )
+                </React.Fragment>
+            )
+        }
+        return null
     })
 
     return (
