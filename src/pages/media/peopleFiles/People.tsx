@@ -104,11 +104,15 @@ const People = () => {
                 </div>
             </div>
             <hr></hr>
-            <div
+            {peopleData.length > 0 ? <h1 className='text-4xl mt-12 text-center'>People</h1> :
+                <h1 className='text-4xl mt-28 md:mt-48 text-center'>
+                    No data currently...
+                </h1>}
+            <main
                 className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'
             >
                 {peopleList}
-            </div>
+            </main>
         </>
     )
 }
