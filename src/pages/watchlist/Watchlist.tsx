@@ -25,10 +25,11 @@ const Watchlist = () => {
         } else {
             toast.success("Your favorites list is now clear")
             localStorage.clear()
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
         }
-        setTimeout(() => {
-            window.location.reload()
-        }, 1000)
+
     }
 
     const watchlistMovieData = watchlistData?.map(item => {
