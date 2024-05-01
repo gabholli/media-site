@@ -44,7 +44,6 @@ const Watchlist = () => {
                             alt="item"
                         ></img>
                         <h1 className='text-3xl font-bold'>{item.title}</h1>
-                        {/* <p className='text-left text-sm'>{item.overview}</p> */}
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{item.popularity}</span></p>
                         <p><span className='font-semibold text-2xl'>Release date: </span>
