@@ -141,7 +141,9 @@ const Watchlist = () => {
                     <h1 className='text-4xl mt-9 text-center'
                     >Favorites
                     </h1>
-                ) : null
+                ) : <h1 className='text-4xl mt-28 md:mt-48 text-center'>
+                    No data currently...
+                </h1>
             }
             <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'>
                 {watchlistMovieData}
