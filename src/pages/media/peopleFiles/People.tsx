@@ -95,7 +95,7 @@ const People = () => {
         <>
             <div className='flex flex-col lg:flex-row justify-between items-center
          py-9 lg:mx-16 gap-y-6 gap-x-8'>
-                <h1 className='text-4xl mt-1 text-center'>Media Site - People</h1>
+                <h1 className='text-4xl mt-1 text-center px-1'>Media Finder - People</h1>
                 <section className='flex flex-col lg:flex-row px-2 gap-8 '>
                     <TopLinks />
                     <SearchForm

@@ -103,7 +103,7 @@ const TV = () => {
         <>
             <div className='flex flex-col lg:flex-row justify-between items-center
          py-9 lg:mx-16 gap-y-6 gap-x-8'>
-                <h1 className='text-4xl mt-1 text-center'>Media Site - TV</h1>
+                <h1 className='text-4xl mt-1 text-center'>Media Finder - TV</h1>
                 <section className='flex flex-col lg:flex-row px-2 gap-8 '>
                     <TopLinks />
                     <SearchForm
