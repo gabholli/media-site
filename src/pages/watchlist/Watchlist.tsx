@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import RemoveFromLocalStorageButton from '@/components/RemoveFromLocalStorageButton'
 import { WatchlistInterface } from '@/types/types'
+import toast from 'react-hot-toast'
 
 const Watchlist = () => {
 
@@ -19,7 +20,10 @@ const Watchlist = () => {
 
     const clearWatchlist = () => {
         localStorage.clear()
-        window.location.reload()
+        toast.success("Your favorites list is now clear")
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000)
     }
 
     const watchlistMovieData = watchlistData?.map(item => {
