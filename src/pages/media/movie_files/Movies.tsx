@@ -102,7 +102,7 @@ const Movies = () => {
       <div className='flex flex-col lg:flex-row justify-between items-center
          py-9 lg:mx-16 gap-y-6 gap-x-8'>
         <h1 className='text-4xl mt-1 text-center'>Media Site</h1>
-        <div className='flex flex-col lg:flex-row px-2 gap-8 '>
+        <section className='flex flex-col lg:flex-row px-2 gap-8 '>
           <TopLinks />
           <SearchForm
             submit={handleSubmit}
@@ -111,7 +111,7 @@ const Movies = () => {
             placeholderText="Enter movie name..."
             name="searchValue"
           />
-        </div>
+        </section>
       </div>
       <hr></hr>
       {movieList.length > 0 ? <h1 className='text-4xl mt-12 text-center'>Movies</h1> :
