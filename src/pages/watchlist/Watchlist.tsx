@@ -39,7 +39,7 @@ const Watchlist = () => {
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
-                        <img className="h-64 w-full object-cover rounded-3xl"
+                        <img className="h-64 md:h-96 w-full object-cover rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                             alt="item"
                         ></img>
@@ -77,7 +77,7 @@ const Watchlist = () => {
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
-                        <img className="h-64 w-full object-cover rounded-3xl"
+                        <img className="h-64 md:h-96 w-full object-cover rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                             alt="item"
                         ></img>
@@ -151,7 +151,7 @@ const Watchlist = () => {
                     No data currently...
                 </h1>
             }
-            <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 md:p-8'>
                 {watchlistMovieData}
                 {watchlistPeopleData}
             </div>

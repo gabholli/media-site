@@ -65,7 +65,7 @@ const Movies = () => {
           <div
             className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
           rounded-3xl'>
-            <img className="h-64 w-full object-cover rounded-3xl"
+            <img className="h-64 md:h-96 w-full object-cover rounded-3xl"
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt="Movie"
             ></img>
@@ -112,7 +112,7 @@ const Movies = () => {
         <h1 className='text-4xl mt-28 md:mt-48 text-center'>
           No data currently...
         </h1>}
-      <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'>
+      <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 md:p-8'>
         {movieList}
       </main>
     </>
