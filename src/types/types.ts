@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 
 export interface Movie {
+    original_title(original_title: any): unknown
     id: number
     poster_path: string
     title: string
@@ -24,6 +25,7 @@ export interface MovieLocalStorage {
 }
 
 export interface PeopleInterface {
+    place_of_birth(place_of_birth: any): unknown
     id: number
     known_for: any
     known_for_department: string
@@ -33,6 +35,7 @@ export interface PeopleInterface {
 }
 
 export interface TVInterface {
+    name: ReactNode
     id: number
     poster_path: string
     title: string
@@ -43,6 +46,7 @@ export interface TVInterface {
 }
 
 export interface WatchlistInterface {
+    original_title: any
     overview: any
     place_of_birth: any
     revenue: any
