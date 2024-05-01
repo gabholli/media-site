@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-color: blue;
+    background-color: #03045e;
     color: white;
     min-height: 100svh;
     font-family: 'Times New Roman', Times, serif;

@@ -15,7 +15,7 @@ const SearchForm: React.FC<FormComponentProps> = ({ submit, value, name, change,
             >
             </input>
             <button className="flex justify-center items-center
-            bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+                bg-cyan-500 hover:bg-teal-200 active:bg-cyan-100
               px-4 py-2 rounded font-black mt-6 md:mt-0 max-[767px]:w-full"
             >Search
             </button>

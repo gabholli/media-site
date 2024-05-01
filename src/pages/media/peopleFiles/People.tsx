@@ -46,8 +46,8 @@ const People = () => {
             <React.Fragment key={person.id}>
                 {person.profile_path && (
                     <div
-                        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
-              rounded-3xl'>
+                        className='flex flex-col justify-between items-center bg-sky-600 p-6 gap-y-8 
+                        text-center m-6 rounded-3xl'>
                         <img className="h-64 w-full object-scale-down rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                             alt="Person"
@@ -60,8 +60,8 @@ const People = () => {
                         <Link
                             href={`./people/${person.id}`}
                             className='flex justify-center items-center
-                bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
-                  px-4 py-2 w-full rounded font-black'>
+                            bg-cyan-500 hover:bg-teal-200 active:bg-cyan-100
+                                px-4 py-2 w-full rounded font-black'>
                             Details
                         </Link>
                     </div >

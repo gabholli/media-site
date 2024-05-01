@@ -43,7 +43,7 @@ const ToWatchlistButton: React.FC<WatchlistButtonComponentProps> = ({ data }) =>
             <button
                 onClick={() => addItem(data)}
                 className='
-            bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+                bg-cyan-500 hover:bg-teal-200 active:bg-cyan-100
             px-4 py-2 rounded font-black
             md:w-48 block m-auto'>
                 Add to Favorites
