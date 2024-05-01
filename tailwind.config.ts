@@ -25,12 +25,14 @@ const config: Config = {
           "link1",
           "image2",
           "link2",
+          "image3",
+          "link3",
         ],
-        "homePageMedium": [
-          "greeting greeting greeting",
-          "title title title",
-          "image1 . image2",
-          "link1 . link2",
+        "homePageLarge": [
+          "greeting greeting greeting greeting greeting",
+          ". title title title .",
+          "image1 . image2 . image3",
+          "link1 . link2 . link3",
         ],
         "watchlistPlaceholder": [
           ". . .",
@@ -40,12 +42,12 @@ const config: Config = {
         "topLinksMobile": [
           "home . favorites",
           "movies . people",
-          ". tv ."
+          ". tv .",
         ],
         "topLinksMobileFavorites": [
           "home . tv",
           "movies . people",
-          ". clear ."
+          ". clear .",
         ],
         "topLinksLarge": [
           "title links search",
