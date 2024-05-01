@@ -76,7 +76,7 @@ const PeopleDetails = () => {
                                 Birthplace: </span>{peopleData.place_of_birth}</p>
                             <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Popularity score: </span>{peopleData.popularity}</p>
-                            <p className='text-xl text-left'><span className='font-semibold text-2xl'>
+                            <p className='text-xl text-left leading-8'><span className='font-semibold text-2xl'>
                                 Biography: </span>{peopleData.biography}</p>
                             <ToWatchlistButton
                                 data={peopleData}
