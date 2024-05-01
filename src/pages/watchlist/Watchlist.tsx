@@ -115,7 +115,7 @@ const Watchlist = () => {
               rounded-3xl'>
                         <img className="h-64 w-full object-scale-down rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
-                            alt="Movie"
+                            alt="TV Show"
                         ></img>
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
@@ -128,13 +128,18 @@ const Watchlist = () => {
                             <p><span className='font-semibold text-2xl'>Vote count: </span>
                                 <span className='font-normal text-xl'>{show.vote_count}</span></p>
                         </div>
-                        <Link
-                            href={`./tv/${show.id}`}
-                            className='flex justify-center items-center
-                bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
-                  px-4 py-2 w-full rounded font-black'>
-                            Details
-                        </Link>
+                        <div className='flex gap-x-12'>
+                            <RemoveFromLocalStorageButton
+                                itemToRemove={show.id}
+                            />
+                            <Link
+                                href={`/media/tvFiles/tv/${show.id}`}
+                                className='flex justify-center items-center
+                        bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+                        px-4 py-2 w-full rounded font-black lg:w-44 md:w-72'>
+                                Details
+                            </Link>
+                        </div>
                     </div>
                 </React.Fragment>
             )
