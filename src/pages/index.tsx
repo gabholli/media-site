@@ -8,7 +8,7 @@ const Index = () => {
       <nav className='grid grid-areas-homePageMobile py-10 lg:grid-areas-homePageLarge 
       lg:grid-cols-[1fr_25px_1fr_25px_1fr] min-[1440px]:grid-cols-[1fr_100px_1fr_100px_1fr] 
         place-items-center p-6 gap-y-10'>
-        <h1 className='grid-in-greeting text-3xl lg:text-4xl text-center'>Welcome to the Media Site</h1>
+        <h1 className='grid-in-greeting text-3xl lg:text-4xl text-center'>Welcome to Media Finder</h1>
         <h1 className='text-2xl lg:text-3xl grid-in-title text-center'>Select category of interest:</h1>
         <img
           className='h-64 w-full bg-cover object-cover md:size-96 grid-in-image1 rounded-3xl'
