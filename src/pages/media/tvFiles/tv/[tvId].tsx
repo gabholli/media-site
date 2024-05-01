@@ -61,7 +61,7 @@ const TvDetails = () => {
                 <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
                     <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
                         <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
-                            <img className="size-1/3 object-scale-dwon rounded-3xl"
+                            <img className="size-72 object-cover object-center rounded-3xl"
                                 src={`https://image.tmdb.org/t/p/original${tvData.poster_path}`}
                                 alt="Movie">
                             </img>
