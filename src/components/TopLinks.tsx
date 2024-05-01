@@ -33,7 +33,7 @@ const TopLinks = () => {
 
             <Link
                 className='grid-in-tv underline text-xl text-center'
-                href="/">
+                href="/media/tvFiles/TV">
                 TV
             </Link>
         </nav>
