@@ -105,7 +105,7 @@ const People = () => {
             </div>
             <hr></hr>
             <div
-                className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'
+                className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'
             >
                 {peopleList}
             </div>

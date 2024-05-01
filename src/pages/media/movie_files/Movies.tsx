@@ -109,7 +109,7 @@ const Movies = () => {
       </div>
       <hr></hr>
       {movieList.length > 0 && <h1 className='text-4xl mt-9 text-center'>Movies</h1>}
-      <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3'>
+      <main className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 p-8'>
         {movieList}
       </main>
     </>
