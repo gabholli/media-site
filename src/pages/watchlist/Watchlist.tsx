@@ -35,7 +35,7 @@ const Watchlist = () => {
     const watchlistMovieData = watchlistData?.map(item => {
         return (
             <React.Fragment key={item.id}>
-                {!item.name && (
+                {item.revenue && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
@@ -76,13 +76,13 @@ const Watchlist = () => {
     const watchlistPeopleData = watchlistData?.map(person => {
         return (
             <React.Fragment key={person.id}>
-                {person.name && (
+                {person.place_of_birth && (
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 
                 rounded-3xl text-center m-6'>
                         <img className="h-64 w-full object-scale-down rounded-3xl"
                             src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
-                            alt="item"
+                            alt="Person"
                         ></img>
                         <h1 className='text-3xl font-bold'>{person.name}</h1>
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
@@ -100,6 +100,43 @@ const Watchlist = () => {
                             </Link>
                         </div>
                     </div >
+                )
+                }
+            </React.Fragment>
+        )
+    })
+
+    const watchlistTVData = watchlistData?.map(show => {
+        return (
+            <React.Fragment key={show.id}>
+                {show.first_air_date && (
+                    <div
+                        className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
+              rounded-3xl'>
+                        <img className="h-64 w-full object-scale-down rounded-3xl"
+                            src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
+                            alt="Movie"
+                        ></img>
+                        <h1 className='text-3xl font-bold'>{show.name}</h1>
+                        {/* <p className='text-left text-sm'>{movie.overview}</p> */}
+                        <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                            <span className='font-normal text-xl'>{show.popularity}</span></p>
+                        <p><span className='font-semibold text-2xl'>First airing date: </span>
+                            <span className='font-normal text-xl'>{show.first_air_date}</span></p>
+                        <div className='flex gap-x-4'>
+                            <p><span className='font-semibold text-2xl'>Average votes: </span>
+                                <span className='font-normal text-xl'>{show.vote_average}</span></p>
+                            <p><span className='font-semibold text-2xl'>Vote count: </span>
+                                <span className='font-normal text-xl'>{show.vote_count}</span></p>
+                        </div>
+                        <Link
+                            href={`./tv/${show.id}`}
+                            className='flex justify-center items-center
+                bg-neutral-400 hover:bg-zinc-500 active:bg-neutral-600
+                  px-4 py-2 w-full rounded font-black'>
+                            Details
+                        </Link>
+                    </div>
                 )
                 }
             </React.Fragment>
@@ -134,7 +171,7 @@ const Watchlist = () => {
 
                     <Link
                         className='grid-in-tv underline text-xl'
-                        href="/">
+                        href="/media/tvFiles/TV">
                         TV
                     </Link>
 
@@ -158,6 +195,7 @@ const Watchlist = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 md:p-8'>
                 {watchlistMovieData}
                 {watchlistPeopleData}
+                {watchlistTVData}
             </div>
             <BackToTopButton />
 
