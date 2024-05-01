@@ -36,7 +36,7 @@ const TvDetails = () => {
                     setLoading(false)
                 })
         }
-    }, [router.isReady, query.movieId])
+    }, [router.isReady, query.tvId])
 
     if (loading) {
         return (
