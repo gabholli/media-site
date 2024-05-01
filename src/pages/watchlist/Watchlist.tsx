@@ -19,8 +19,13 @@ const Watchlist = () => {
     console.log(watchlistData)
 
     const clearWatchlist = () => {
-        localStorage.clear()
-        toast.success("Your favorites list is now clear")
+        const value = localStorage.getItem('watchlist')
+        if (value === null || value === '') {
+            toast.error("Your favorites list is already clear")
+        } else {
+            toast.success("Your favorites list is now clear")
+            localStorage.clear()
+        }
         setTimeout(() => {
             window.location.reload()
         }, 1000)
