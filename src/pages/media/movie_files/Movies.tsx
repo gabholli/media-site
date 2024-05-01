@@ -58,7 +58,9 @@ const Movies = () => {
     )
   }
 
-  const movieList = movieData?.map(movie => {
+  const validMovie = movieData?.filter(movie => movie.poster_path)
+
+  const movieList = validMovie?.map(movie => {
     return (
       <React.Fragment key={movie.id}>
         {movie.poster_path && (

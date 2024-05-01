@@ -39,7 +39,9 @@ const People = () => {
             })
     }, [search])
 
-    const peopleList = peopleData?.map(person => {
+    const validPeople = peopleData.filter(person => person.profile_path);
+
+    const peopleList = validPeople?.map(person => {
         return (
             <React.Fragment key={person.id}>
                 {person.profile_path && (
@@ -106,7 +108,7 @@ const People = () => {
                 </div>
             </div>
             <hr></hr>
-            {peopleData.length > 0 ? <h1 className='text-4xl mt-12 text-center'>People</h1> :
+            {peopleList.length > 0 ? <h1 className='text-4xl mt-12 text-center'>People</h1> :
                 <h1 className='text-4xl mt-28 md:mt-48 text-center'>
                     No data currently...
                 </h1>}
