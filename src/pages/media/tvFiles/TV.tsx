@@ -52,8 +52,7 @@ const TV = () => {
                             src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
                             alt="TV show"
                         ></img>
-                        <h1 className='text-3xl font-bold'>{show.name}</h1>
-                        {/* <p className='text-left text-sm'>{movie.overview}</p> */}
+                        {show.name && <h1 className='text-3xl font-bold'>{show.name}</h1>}
                         {"poplularity" in show && <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{show.popularity}</span></p>}
                         {show.first_air_date && <p><span className='font-semibold text-2xl'>First airing date: </span>

@@ -52,7 +52,7 @@ const People = () => {
                             src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                             alt="Person"
                         ></img>
-                        <h1 className='text-3xl font-bold'>{person.name}</h1>
+                        {person.name && <h1 className='text-3xl font-bold'>{person.name}</h1>}
                         {person.known_for_department && <p><span className='font-semibold text-2xl'>Known for: </span>
                             <span className='font-normal text-xl'>{person.known_for_department}</span></p>}
                         {"popularity" in person && <p><span className='font-semibold text-2xl'>Popularity score: </span>

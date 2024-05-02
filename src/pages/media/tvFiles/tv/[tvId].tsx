@@ -65,10 +65,10 @@ const TvDetails = () => {
                                 src={`https://image.tmdb.org/t/p/original${tvData.poster_path}`}
                                 alt="Movie">
                             </img>
-                            <h1
+                            {tvData.name && <h1
                                 className='text-center text-3xl font-bold'>
                                 {tvData.name}
-                            </h1>
+                            </h1>}
                             {"popularity" in tvData && <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Popularity score: </span>{tvData.popularity}</p>}
                             {tvData.first_air_date && <p className='text-xl'><span className='font-semibold text-2xl'>

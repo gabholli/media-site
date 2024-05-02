@@ -66,10 +66,10 @@ const PeopleDetails = () => {
                                 src={`https://image.tmdb.org/t/p/original${peopleData.profile_path}`}
                                 alt="Movie">
                             </img>
-                            <h1
+                            {peopleData.name && <h1
                                 className='text-center text-3xl font-bold'>
                                 {peopleData.name}
-                            </h1>
+                            </h1>}
                             {peopleData.known_for_department && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Known for: </span>{peopleData.known_for_department}</p>}
