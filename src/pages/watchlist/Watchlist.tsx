@@ -18,7 +18,7 @@ const Watchlist = () => {
 
     console.log(watchlistData)
 
-    const handleRemoveItem = (itemId) => {
+    const handleRemoveItem = (itemId: number) => {
         setWatchlistData(currentData => currentData.filter(item => item.id !== itemId));
     }
 
@@ -29,9 +29,7 @@ const Watchlist = () => {
         } else {
             toast.success("Your favorites list is now clear")
             localStorage.removeItem("watchlist")
-            setTimeout(() => {
-                window.location.reload()
-            }, 1000)
+            setWatchlistData([])
         }
 
     }
