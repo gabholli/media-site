@@ -46,8 +46,8 @@ const Watchlist = () => {
                         <h1 className='text-3xl font-bold'>{item.title}</h1>
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{item.popularity}</span></p>
-                        <p><span className='font-semibold text-2xl'>Release date: </span>
-                            <span className='font-normal text-xl'>{item.release_date}</span></p>
+                        {item.release_date && <p><span className='font-semibold text-2xl'>Release date: </span>
+                            <span className='font-normal text-xl'>{item.release_date}</span></p>}
                         <div className='flex gap-x-4'>
                             <p><span className='font-semibold text-2xl'>Average votes: </span>
                                 <span className='font-normal text-xl'>{item.vote_average}</span></p>
@@ -120,8 +120,8 @@ const Watchlist = () => {
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
                         <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{show.popularity}</span></p>
-                        <p><span className='font-semibold text-2xl'>First airing date: </span>
-                            <span className='font-normal text-xl'>{show.first_air_date}</span></p>
+                        {show.release_date && <p><span className='font-semibold text-2xl'>First airing date: </span>
+                            <span className='font-normal text-xl'>{show.first_air_date}</span></p>}
                         <div className='flex gap-x-4'>
                             <p><span className='font-semibold text-2xl'>Average votes: </span>
                                 <span className='font-normal text-xl'>{show.vote_average}</span></p>
