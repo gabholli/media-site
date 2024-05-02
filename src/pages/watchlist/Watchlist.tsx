@@ -23,16 +23,18 @@ const Watchlist = () => {
     }
 
     const clearWatchlist = () => {
-        const value = localStorage.getItem('watchlist')
-        if (value === null || value === '') {
-            toast.error("Your favorites list is already clear")
+        const value = localStorage.getItem('watchlist');
+        const watchlistArray = value ? JSON.parse(value) : [];
+
+        if (!watchlistArray.length) {
+            toast.error("Your favorites list is already clear");
         } else {
-            toast.success("Your favorites list is now clear")
-            localStorage.removeItem("watchlist")
+            toast.success("Your favorites list is now clear");
+            localStorage.removeItem("watchlist");
             setWatchlistData([])
         }
+    };
 
-    }
 
     const watchlistMovieData = watchlistData?.map(item => {
         if ("revenue" in item) {
