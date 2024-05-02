@@ -18,6 +18,10 @@ const Watchlist = () => {
 
     console.log(watchlistData)
 
+    const handleRemoveItem = (itemId) => {
+        setWatchlistData(currentData => currentData.filter(item => item.id !== itemId));
+    }
+
     const clearWatchlist = () => {
         const value = localStorage.getItem('watchlist')
         if (value === null || value === '') {
@@ -57,6 +61,7 @@ const Watchlist = () => {
                         <div className='flex gap-x-12'>
                             <RemoveFromLocalStorageButton
                                 itemToRemove={item.id}
+                                onRemove={handleRemoveItem}
                             />
                             <Link
                                 href={`/media/movie_files/movie/${item.id}`}
@@ -90,6 +95,7 @@ const Watchlist = () => {
                         <div className='flex gap-x-12'>
                             <RemoveFromLocalStorageButton
                                 itemToRemove={person.id}
+                                onRemove={handleRemoveItem}
                             />
                             <Link
                                 href={`/media/peopleFiles/people/${person.id}`}
@@ -131,6 +137,7 @@ const Watchlist = () => {
                         <div className='flex gap-x-12'>
                             <RemoveFromLocalStorageButton
                                 itemToRemove={show.id}
+                                onRemove={handleRemoveItem}
                             />
                             <Link
                                 href={`/media/tvFiles/tv/${show.id}`}

@@ -96,4 +96,5 @@ export interface MovieList {
 
 export interface RemoveItemButtonProps {
     itemToRemove: number
+    onRemove: (itemId: number) => void
 }
