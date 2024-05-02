@@ -54,15 +54,15 @@ const TV = () => {
                         ></img>
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
                         {/* <p className='text-left text-sm'>{movie.overview}</p> */}
-                        <p><span className='font-semibold text-2xl'>Popularity score: </span>
-                            <span className='font-normal text-xl'>{show.popularity}</span></p>
-                        <p><span className='font-semibold text-2xl'>First airing date: </span>
-                            <span className='font-normal text-xl'>{show.first_air_date}</span></p>
+                        {show.popularity && <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                            <span className='font-normal text-xl'>{show.popularity}</span></p>}
+                        {show.first_air_date && <p><span className='font-semibold text-2xl'>First airing date: </span>
+                            <span className='font-normal text-xl'>{show.first_air_date}</span></p>}
                         <div className='flex gap-x-4'>
-                            <p><span className='font-semibold text-2xl'>Average votes: </span>
-                                <span className='font-normal text-xl'>{show.vote_average}</span></p>
-                            <p><span className='font-semibold text-2xl'>Vote count: </span>
-                                <span className='font-normal text-xl'>{show.vote_count}</span></p>
+                            {show.vote_average && <p><span className='font-semibold text-2xl'>Average votes: </span>
+                                <span className='font-normal text-xl'>{show.vote_average}</span></p>}
+                            {show.vote_count && <p><span className='font-semibold text-2xl'>Vote count: </span>
+                                <span className='font-normal text-xl'>{show.vote_count}</span></p>}
                         </div>
                         <Link
                             href={`./tv/${show.id}`}

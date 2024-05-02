@@ -65,21 +65,21 @@ const MovieDetails = () => {
                 src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
                 alt="Movie">
               </img>
-              <h1
+              {moviesData.title && <h1
                 className='text-center text-3xl font-bold'>
                 {moviesData.title}
-              </h1>
-              <p className='text-xl'><span className='font-semibold text-2xl'>
-                Popularity score: </span>{moviesData.popularity}</p>
-              <p className='text-xl'><span className='font-semibold text-2xl'>
+              </h1>}
+              {moviesData.popularity && <p className='text-xl'><span className='font-semibold text-2xl'>
+                Popularity score: </span>{moviesData.popularity}</p>}
+              {moviesData.release_date && <p className='text-xl'><span className='font-semibold text-2xl'>
                 Release date:
-              </span> {moviesData.release_date}</p>
+              </span> {moviesData.release_date}</p>}
               {moviesData.origin_country && <p className='text-xl'>
                 <span className='font-semibold text-2xl'>
                   Country of origin: </span>
                 {moviesData.origin_country[0]}
               </p>}
-              <p className='text-lg text-center'>{moviesData.overview}</p>
+              {moviesData.overview && <p className='text-lg text-center'>{moviesData.overview}</p>}
               <ToWatchlistButton
                 data={moviesData}
               />

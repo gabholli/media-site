@@ -69,17 +69,16 @@ const TvDetails = () => {
                                 className='text-center text-3xl font-bold'>
                                 {tvData.name}
                             </h1>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                Popularity score: </span>{tvData.popularity}</p>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                First airing date:
-                            </span> {tvData.first_air_date}</p>
+                            {tvData.popularity && <p className='text-xl'><span className='font-semibold text-2xl'>
+                                Popularity score: </span>{tvData.popularity}</p>}
+                            {tvData.first_air_date && <p className='text-xl'><span className='font-semibold text-2xl'>
+                                First airing date: </span> {tvData.first_air_date}</p>}
                             {tvData.origin_country && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Country of origin: </span>
                                 {tvData.origin_country[0]}
                             </p>}
-                            <p className='text-lg text-center'>{tvData.overview}</p>
+                            {tvData.overview && <p className='text-lg text-center'>{tvData.overview}</p>}
                             <ToWatchlistButton
                                 data={tvData}
                             />

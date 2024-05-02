@@ -71,17 +71,17 @@ const Movies = () => {
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt="Movie"
             ></img>
-            <h1 className='text-3xl font-bold'>{movie.title}</h1>
+            {movie.title && <h1 className='text-3xl font-bold'>{movie.title}</h1>}
             {/* <p className='text-left text-sm'>{movie.overview}</p> */}
-            <p><span className='font-semibold text-2xl'>Popularity score: </span>
-              <span className='font-normal text-xl'>{movie.popularity}</span></p>
-            <p><span className='font-semibold text-2xl'>Release date: </span>
-              <span className='font-normal text-xl'>{movie.release_date}</span></p>
+            {movie.popularity && <p><span className='font-semibold text-2xl'>Popularity score: </span>
+              <span className='font-normal text-xl'>{movie.popularity}</span></p>}
+            {movie.release_date && <p><span className='font-semibold text-2xl'>Release date: </span>
+              <span className='font-normal text-xl'>{movie.release_date}</span></p>}
             <div className='flex gap-x-4'>
-              <p><span className='font-semibold text-2xl'>Average votes: </span>
-                <span className='font-normal text-xl'>{movie.vote_average}</span></p>
-              <p><span className='font-semibold text-2xl'>Vote count: </span>
-                <span className='font-normal text-xl'>{movie.vote_count}</span></p>
+              {movie.vote_average && <p><span className='font-semibold text-2xl'>Average votes: </span>
+                <span className='font-normal text-xl'>{movie.vote_average}</span></p>}
+              {movie.vote_count && <p><span className='font-semibold text-2xl'>Vote count: </span>
+                <span className='font-normal text-xl'>{movie.vote_count}</span></p>}
             </div>
             <Link
               href={`./movie/${movie.id}`}

@@ -70,16 +70,21 @@ const PeopleDetails = () => {
                                 className='text-center text-3xl font-bold'>
                                 {peopleData.name}
                             </h1>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                Known for: </span>{peopleData.known_for_department}</p>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                Birthplace: </span>{peopleData.place_of_birth}</p>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                Birthday: </span>{peopleData.birthday}</p>
-                            <p className='text-xl'><span className='font-semibold text-2xl'>
-                                Popularity score: </span>{peopleData.popularity}</p>
-                            <p className='text-xl text-left leading-8'><span className='font-semibold text-2xl'>
-                                Biography: </span>{peopleData.biography}</p>
+                            {peopleData.known_for_department && <p className='text-xl'>
+                                <span className='font-semibold text-2xl'>
+                                    Known for: </span>{peopleData.known_for_department}</p>}
+                            {peopleData.place_of_birth && <p className='text-xl'>
+                                <span className='font-semibold text-2xl'>
+                                    Birthplace: </span>{peopleData.place_of_birth}</p>}
+                            {peopleData.birthday && <p className='text-xl'>
+                                <span className='font-semibold text-2xl'>
+                                    Birthday: </span>{peopleData.birthday}</p>}
+                            {peopleData.popularity && <p className='text-xl'>
+                                <span className='font-semibold text-2xl'>
+                                    Popularity score: </span>{peopleData.popularity}</p>}
+                            {peopleData.biography && <p className='text-xl text-left leading-8'>
+                                <span className='font-semibold text-2xl'>
+                                    Biography: </span>{peopleData.biography}</p>}
                             <ToWatchlistButton
                                 data={peopleData}
                             />
