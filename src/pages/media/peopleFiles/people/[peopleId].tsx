@@ -55,7 +55,7 @@ const PeopleDetails = () => {
                 <header className='flex flex-col justify-between items-center 
                     lg:grid lg:grid-areas-topLinksDetails
                     pb-9 pt-2 lg:mx-16 gap-y-6 gap-x-8'>
-                    <h1 className='grid-in-title text-4xl mt-1 text-center'>Media Site</h1>
+                    <h1 className='grid-in-title text-4xl mt-1 text-center'>Media Finder - People</h1>
                     <TopLinks />
                 </header>
                 <hr></hr>
