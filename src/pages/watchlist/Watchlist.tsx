@@ -33,8 +33,7 @@ const Watchlist = () => {
             localStorage.removeItem("watchlist");
             setWatchlistData([])
         }
-    };
-
+    }
 
     const watchlistMovieData = watchlistData?.map(item => {
         if ("revenue" in item) {
