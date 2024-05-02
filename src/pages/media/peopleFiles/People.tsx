@@ -55,7 +55,7 @@ const People = () => {
                         <h1 className='text-3xl font-bold'>{person.name}</h1>
                         {person.known_for_department && <p><span className='font-semibold text-2xl'>Known for: </span>
                             <span className='font-normal text-xl'>{person.known_for_department}</span></p>}
-                        {person.popularity && <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                        {"popularity" in person && <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{person.popularity}</span></p>}
                         <Link
                             href={`./people/${person.id}`}

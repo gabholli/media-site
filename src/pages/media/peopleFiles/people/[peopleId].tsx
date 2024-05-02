@@ -79,7 +79,7 @@ const PeopleDetails = () => {
                             {peopleData.birthday && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Birthday: </span>{peopleData.birthday}</p>}
-                            {peopleData.popularity && <p className='text-xl'>
+                            {"popularity" in peopleData && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Popularity score: </span>{peopleData.popularity}</p>}
                             {peopleData.biography && <p className='text-xl text-left leading-8'>

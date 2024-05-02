@@ -78,10 +78,10 @@ const Movies = () => {
             {movie.release_date && <p><span className='font-semibold text-2xl'>Release date: </span>
               <span className='font-normal text-xl'>{movie.release_date}</span></p>}
             <div className='flex gap-x-4'>
-              <p><span className='font-semibold text-2xl'>Average votes: </span>
-                <span className='font-normal text-xl'>{movie.vote_average}</span></p>
-              <p><span className='font-semibold text-2xl'>Vote count: </span>
-                <span className='font-normal text-xl'>{movie.vote_count}</span></p>
+              {"vote_average" in movie && <p><span className='font-semibold text-2xl'>Average votes: </span>
+                <span className='font-normal text-xl'>{movie.vote_average}</span></p>}
+              {"vote_count" in movie && <p><span className='font-semibold text-2xl'>Vote count: </span>
+                <span className='font-normal text-xl'>{movie.vote_count}</span></p>}
             </div>
             <Link
               href={`./movie/${movie.id}`}

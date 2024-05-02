@@ -69,7 +69,7 @@ const TvDetails = () => {
                                 className='text-center text-3xl font-bold'>
                                 {tvData.name}
                             </h1>
-                            {tvData.popularity && <p className='text-xl'><span className='font-semibold text-2xl'>
+                            {"popularity" in tvData && <p className='text-xl'><span className='font-semibold text-2xl'>
                                 Popularity score: </span>{tvData.popularity}</p>}
                             {tvData.first_air_date && <p className='text-xl'><span className='font-semibold text-2xl'>
                                 First airing date: </span> {tvData.first_air_date}</p>}

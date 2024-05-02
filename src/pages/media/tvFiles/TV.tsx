@@ -54,14 +54,14 @@ const TV = () => {
                         ></img>
                         <h1 className='text-3xl font-bold'>{show.name}</h1>
                         {/* <p className='text-left text-sm'>{movie.overview}</p> */}
-                        {show.popularity && <p><span className='font-semibold text-2xl'>Popularity score: </span>
+                        {"poplularity" in show && <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{show.popularity}</span></p>}
                         {show.first_air_date && <p><span className='font-semibold text-2xl'>First airing date: </span>
                             <span className='font-normal text-xl'>{show.first_air_date}</span></p>}
                         <div className='flex gap-x-4'>
-                            {show.vote_average && <p><span className='font-semibold text-2xl'>Average votes: </span>
+                            {"vote_average" in show && <p><span className='font-semibold text-2xl'>Average votes: </span>
                                 <span className='font-normal text-xl'>{show.vote_average}</span></p>}
-                            {show.vote_count && <p><span className='font-semibold text-2xl'>Vote count: </span>
+                            {"vote_count" in show && <p><span className='font-semibold text-2xl'>Vote count: </span>
                                 <span className='font-normal text-xl'>{show.vote_count}</span></p>}
                         </div>
                         <Link

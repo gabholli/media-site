@@ -69,7 +69,7 @@ const MovieDetails = () => {
                 className='text-center text-3xl font-bold'>
                 {moviesData.title}
               </h1>}
-              {moviesData.popularity && <p className='text-xl'><span className='font-semibold text-2xl'>
+              {"popularity" in moviesData && <p className='text-xl'><span className='font-semibold text-2xl'>
                 Popularity score: </span>{moviesData.popularity}</p>}
               {moviesData.release_date && <p className='text-xl'><span className='font-semibold text-2xl'>
                 Release date:
