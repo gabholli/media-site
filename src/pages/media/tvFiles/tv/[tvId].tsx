@@ -73,7 +73,7 @@ const TvDetails = () => {
                                 Popularity score: </span>{tvData.popularity}</p>}
                             {tvData.first_air_date && <p className='text-xl'><span className='font-semibold text-2xl'>
                                 First airing date: </span> {tvData.first_air_date}</p>}
-                            {tvData.origin_country && <p className='text-xl'>
+                            {tvData.origin_country && tvData.origin_country.length > 0 && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Country of origin: </span>
                                 {tvData.origin_country[0]}
