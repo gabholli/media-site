@@ -6,7 +6,7 @@ This project contains files for a media information site, showing data about mov
 This site was created using the following:
 
 - React.js
-- JavaScript
+- TypeScript
 - Tailwind CSS
 - Next.js
 
