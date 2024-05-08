@@ -82,7 +82,7 @@ const PeopleDetails = () => {
                             {"popularity" in peopleData && <p className='text-xl'>
                                 <span className='font-semibold text-2xl'>
                                     Popularity score: </span>{peopleData.popularity}</p>}
-                            {peopleData.biography && <p className='text-xl text-left leading-8'>
+                            {peopleData.biography && <p className='text-xl text-center leading-8'>
                                 <span className='font-semibold text-2xl'>
                                     Biography: </span>{peopleData.biography}</p>}
                             <ToWatchlistButton

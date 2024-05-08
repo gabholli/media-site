@@ -79,7 +79,7 @@ const MovieDetails = () => {
                   Country of origin: </span>
                 {moviesData.origin_country[0]}
               </p>}
-              {moviesData.overview && <p className='text-lg text-left'>{moviesData.overview}</p>}
+              {moviesData.overview && <p className='text-lg text-center'>{moviesData.overview}</p>}
               <ToWatchlistButton
                 data={moviesData}
               />

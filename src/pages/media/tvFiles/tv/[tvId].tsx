@@ -78,7 +78,7 @@ const TvDetails = () => {
                                     Country of origin: </span>
                                 {tvData.origin_country[0]}
                             </p>}
-                            {tvData.overview && <p className='text-lg text-left'>{tvData.overview}</p>}
+                            {tvData.overview && <p className='text-lg text-center'>{tvData.overview}</p>}
                             <ToWatchlistButton
                                 data={tvData}
                             />
