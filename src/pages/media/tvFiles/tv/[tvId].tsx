@@ -4,7 +4,7 @@ import axios from 'axios'
 import TopLinks from '@/components/TopLinks'
 import BackToTopButton from '@/components/BackToTopButton'
 import ToWatchlistButton from '@/components/ToWatchlistButton'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const TvDetails = () => {
 

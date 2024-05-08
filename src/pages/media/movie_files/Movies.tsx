@@ -4,7 +4,7 @@ import { Movie, MovieItem } from '@/types/types'
 import Link from 'next/link'
 import TopLinks from '@/components/TopLinks'
 import SearchForm from '@/components/SearchForm'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const Movies = () => {
 

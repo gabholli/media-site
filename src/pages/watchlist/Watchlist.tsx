@@ -4,7 +4,7 @@ import Link from 'next/link'
 import RemoveFromLocalStorageButton from '@/components/RemoveFromLocalStorageButton'
 import { WatchlistInterface } from '@/types/types'
 import toast from 'react-hot-toast'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const Watchlist = () => {
 

@@ -4,7 +4,7 @@ import { MovieItem, PeopleInterface, TVInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const TV = () => {
 
