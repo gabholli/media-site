@@ -4,7 +4,6 @@ import { MovieItem, PeopleInterface, TVInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
-import Image from "next/legacy/image"
 
 const TV = () => {
 
@@ -49,15 +48,10 @@ const TV = () => {
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
               rounded-3xl'>
-                        <div className='h-64 w-full relative'>
-                            <Image className="rounded-3xl"
-                                src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
-                                alt="TV show"
-                                objectFit='scale-down'
-                                objectPosition='center'
-                                layout='fill'
-                            />
-                        </div>
+                        <img className="h-64 w-full object-scale-down rounded-3xl"
+                            src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
+                            alt="TV show"
+                        ></img>
                         {show.name && <h1 className='text-3xl font-bold'>{show.name}</h1>}
                         {"poplularity" in show && <p><span className='font-semibold text-2xl'>Popularity score: </span>
                             <span className='font-normal text-xl'>{show.popularity}</span></p>}
