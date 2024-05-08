@@ -4,7 +4,6 @@ import axios from 'axios'
 import TopLinks from '@/components/TopLinks'
 import BackToTopButton from '@/components/BackToTopButton'
 import ToWatchlistButton from '@/components/ToWatchlistButton'
-import Image from "next/legacy/image"
 
 const MovieDetails = () => {
 
@@ -62,15 +61,10 @@ const MovieDetails = () => {
         <main className='p-6 flex flex-col gap-y-8 items-center justify-center min-h-svh'>
           <div className='flex flex-col lg:flex-row justify-center items-center lg:mx-44 lg:gap-x-12 gap-y-10'>
             <div className='flex flex-col justify-center items-center gap-y-6 text-center'>
-              <div className='size-72 relative'>
-                <Image className="rounded-3xl"
-                  src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
-                  alt="Movie"
-                  objectFit='cover'
-                  objectPosition='center'
-                  layout='fill'
-                />
-              </div>
+              <img className="size-72 object-cover object-center rounded-3xl"
+                src={`https://image.tmdb.org/t/p/original${moviesData.poster_path}`}
+                alt="Movie">
+              </img>
               {moviesData.title && <h1
                 className='text-center text-3xl font-bold'>
                 {moviesData.title}

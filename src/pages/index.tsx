@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from "next/legacy/image"
 
 const Index = () => {
   return (
@@ -10,34 +9,21 @@ const Index = () => {
         place-items-center p-6 gap-y-10'>
         <h1 className='grid-in-greeting text-3xl lg:text-4xl text-center'>Welcome to Media Finder</h1>
         <h1 className='text-2xl lg:text-3xl grid-in-title text-center'>Select category of interest:</h1>
-        <div className='h-64 w-full md:size-96 lg:size-72 xl:size-96 relative grid-in-image1'>
-          <Image
-            className='rounded-3xl'
-            src="/movie-theater.jpg"
-            alt="Theater"
-            objectFit='cover'
-            layout='fill'
-            priority
-          />
-        </div>
-        <div className='h-64 w-full md:size-96 lg:size-72 xl:size-96 relative grid-in-image2'>
-          <Image
-            className='rounded-3xl'
-            src="/people.jpg"
-            alt="People"
-            objectFit='cover'
-            layout='fill'
-          />
-        </div>
-        <div className='h-64 w-full md:size-96 lg:size-72 xl:size-96 relative grid-in-image3'>
-          <Image
-            className='rounded-3xl'
-            src="/TV.jpg"
-            alt="TV"
-            objectFit='cover'
-            layout='fill'
-          />
-        </div>
+        <img
+          className='h-64 w-full bg-cover object-cover md:size-96 grid-in-image1 rounded-3xl'
+          src="/movie-theater.jpg"
+          alt="Theater"
+        ></img>
+        <img
+          className='h-64 w-full object-cover md:size-96 grid-in-image2 rounded-3xl'
+          src="/people.jpg"
+          alt="People"
+        ></img>
+        <img
+          className='h-64 w-full object-cover md:size-96 grid-in-image3 rounded-3xl'
+          src="/TV.jpg"
+          alt="TV"
+        ></img>
         <Link
           className="grid-in-link1 text-xl"
           href="/media/movie_files/Movies">
