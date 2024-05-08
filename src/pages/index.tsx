@@ -18,6 +18,7 @@ const Index = () => {
             objectFit='cover'
             objectPosition='center'
             layout='fill'
+            priority
           />
         </div>
         <div className='h-64 w-full md:size-96 lg:size-72 xl:size-96 grid-in-image2 relative'>
