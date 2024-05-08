@@ -4,6 +4,7 @@ import { MovieItem, PeopleInterface } from '@/types/types'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 const People = () => {
 
@@ -48,10 +49,15 @@ const People = () => {
                     <div
                         className='flex flex-col justify-between items-center bg-zinc-800 p-6 gap-y-8 text-center m-6
               rounded-3xl'>
-                        <img className="h-64 w-full object-scale-down rounded-3xl"
-                            src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
-                            alt="Person"
-                        ></img>
+                        <div className='h-64 w-full relative'>
+                            <Image className="rounded-3xl"
+                                src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
+                                alt="Person"
+                                objectFit='scale-down'
+                                objectPosition='center'
+                                layout='fill'
+                            />
+                        </div>
                         {person.name && <h1 className='text-3xl font-bold'>{person.name}</h1>}
                         {person.known_for_department && <p><span className='font-semibold text-2xl'>Known for: </span>
                             <span className='font-normal text-xl'>{person.known_for_department}</span></p>}
