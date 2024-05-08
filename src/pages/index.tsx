@@ -17,6 +17,7 @@ const Index = () => {
             alt="Theater"
             objectFit='cover'
             layout='fill'
+            priority
           />
         </div>
         <div className='h-64 w-full md:size-96 lg:size-72 xl:size-96 relative grid-in-image2'>
