@@ -7,7 +7,7 @@ const AllMediaContext = createContext()
 const getMovieFromLocalStorage = localStorage.getItem("movie")
 
 
-const MediaContext: React.FC<ContextProps> = ({ children }) => {
+const MediaContext: React.FC<ContextProps> = () => {
 
     const contextValues = { getMovieFromLocalStorage }
 
