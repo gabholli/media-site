@@ -75,7 +75,7 @@ export interface FormComponentProps {
 export interface ContextProps {
     value: string
     checkArrayHasValue: (array: any[]) => boolean
-    children: React.ReactNode
+    // children: React.ReactNode
 }
 
 export interface MovieItem {
